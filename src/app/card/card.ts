@@ -10,6 +10,6 @@ export class Card {
   key: string;
   name: string;
   description: string;
-  self: string;
+  url: string;
   avatarUrls: Dictionary;
 }

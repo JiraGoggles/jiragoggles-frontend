@@ -15,7 +15,7 @@ Instalacja `npm install -g json-server`, następnie tworzymy sobie jakiś plik `
 {
 "projects":
 	[{
-		"self": "http://www.example.com/jira/rest/api/2/project/EX",
+		"url": "http://www.example.com/jira/rest/api/2/project/EX",
 		"id": "10000",
 		"key": "EX",
 		"name": "Example",
@@ -35,7 +35,7 @@ Instalacja `npm install -g json-server`, następnie tworzymy sobie jakiś plik `
 	    },
 
 	    {
-		"self": "http://www.example.com/jira/rest/api/2/project/ABC",
+		"url": "http://www.example.com/jira/rest/api/2/project/ABC",
 		"id": "10001",
 		"key": "ABC",
 		"name": "Alphabetical",
