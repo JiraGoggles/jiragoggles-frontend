@@ -6,9 +6,7 @@ After cloning type in console:
 npm install
 npm run server:dev:hmr
 ```
-Enjoy, at `http://localhost:3000/`, build with `npm run build`.
-
-Go to `{project_root}/src/app/test/projectService/projects.service.ts` to change API.
+Enjoy, at `http://localhost:3000/` and api `http://localhost:4000/` (change dev api url at `{project_root}/src/app/environment.ts`), build for backend with `npm run build:prod`.
 
 ###json-server
 Przykładowe dane można sobie ogarnąć przez [json-server](https://www.npmjs.com/package/json-server)
