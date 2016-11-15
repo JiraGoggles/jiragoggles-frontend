@@ -1,0 +1,27 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      {{model.name}}
+      <strong>
+        <a href="{{model.self}}" class="navbar-link">[{{model.key}}]</a>
+      </strong>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-2">
+        <span class="aui-avatar aui-avatar-project aui-avatar-medium">
+              <span class="aui-avatar-inner">
+                  <img src="{{model.avatarUrls['48x48']}}">
+              </span>
+        </span>
+
+      </div>
+      <div class="col-md-10">
+        <span style="white-space: normal">
+          {{model.description}}
+        </span>
+
+      </div>
+
+
+    </div>
+</div>

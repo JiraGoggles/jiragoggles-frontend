@@ -1,0 +1,10 @@
+@media (min-width: 992px) {
+  .container-scroll > .row {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .container-scroll > .row > .col-md-4 {
+    display: inline-block;
+    float: none;
+  }
+}

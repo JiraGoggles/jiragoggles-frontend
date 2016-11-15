@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6">
+    <ol class="aui-nav aui-nav-breadcrumbs __skate">
+      <li><a href="#">Home</a></li>
+      <li class="aui-nav-selected">Projects</li>
+    </ol>
+  </div>
+</div>
+
+<br/>
+
+<div class="container-fluid container-scroll">
+  <div class="row">
+    <div *ngFor="let card of cards" class="col-md-4">
+      <card [model]="card" ></card>
+    </div>
+  </div>
+</div>
