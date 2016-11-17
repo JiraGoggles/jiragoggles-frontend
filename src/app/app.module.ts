@@ -18,6 +18,8 @@ import { AppState, InternalStateType } from './app.service';
 import { MainViewComponent } from './mainView';
 import { CardComponent } from './card';
 import { NoContentComponent } from './no-content';
+import {HelloWoldComponent} from "./helloWorld.component";
+import {CarListComponent} from "./car-list.component";
 
 
 // Application wide providers
@@ -41,7 +43,9 @@ type StoreType = {
     AppComponent,
     MainViewComponent,
     CardComponent,
-    NoContentComponent
+    NoContentComponent,
+    HelloWoldComponent,
+    CarListComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
