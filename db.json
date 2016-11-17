@@ -1,0 +1,83 @@
+{
+  "projects":
+  [{
+    "url": "http://www.example.com/jira/rest/api/2/project/EX",
+    "id": "10000",
+    "key": "EX",
+    "name": "Example",
+    "description": "Super description of example project.",
+    "subCards": [
+      {
+        "url": "http://www.example.com/jira/rest/api/2/project/EX",
+        "id": "10000",
+        "key": "EX",
+        "name": "Example",
+        "description": "Super description of example project.",
+        "avatarUrls": {
+          "48x48": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+          "24x24": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+          "16x16": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+          "32x32": "https://issues.folio.org/secure/projectavatar?avatarId=10324"
+        },
+        "projectCategory": {
+          "self": "http://www.example.com/jira/rest/api/2/projectCategory/10000",
+          "id": "10000",
+          "name": "FIRST",
+          "description": "First Project Category"
+        }
+      },
+      {
+        "url": "http://www.example.com/jira/rest/api/2/project/EX",
+        "id": "10000",
+        "key": "EX",
+        "name": "Example",
+        "description": "Super description of example project.",
+        "avatarUrls": {
+          "48x48": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+          "24x24": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+          "16x16": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+          "32x32": "https://issues.folio.org/secure/projectavatar?avatarId=10324"
+        },
+        "projectCategory": {
+          "self": "http://www.example.com/jira/rest/api/2/projectCategory/10000",
+          "id": "10000",
+          "name": "FIRST",
+          "description": "First Project Category"
+        }
+      }
+    ],
+    "avatarUrls": {
+      "48x48": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+      "24x24": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+      "16x16": "https://issues.folio.org/secure/projectavatar?avatarId=10324",
+      "32x32": "https://issues.folio.org/secure/projectavatar?avatarId=10324"
+    },
+    "projectCategory": {
+      "self": "http://www.example.com/jira/rest/api/2/projectCategory/10000",
+      "id": "10000",
+      "name": "FIRST",
+      "description": "First Project Category"
+    }
+  },
+    {
+      "url": "http://www.example.com/jira/rest/api/2/project/ABC",
+      "id": "10001",
+      "key": "ABC",
+      "name": "Alphabetical",
+      "description": "Super description of alphabetical project.",
+      "subCards": [],
+      "avatarUrls": {
+        "48x48": "https://issues.folio.org/secure/projectavatar?size=small&pid=10303",
+        "24x24": "https://issues.folio.org/secure/projectavatar?size=small&pid=10303",
+        "16x16": "https://issues.folio.org/secure/projectavatar?size=small&pid=10303",
+        "32x32": "https://issues.folio.org/secure/projectavatar?size=small&pid=10303"
+      },
+      "projectCategory": {
+        "self": "http://www.example.com/jira/rest/api/2/projectCategory/10000",
+        "id": "10000",
+        "name": "FIRST",
+        "description": "First Project Category"
+      }
+    }
+  ]
+}

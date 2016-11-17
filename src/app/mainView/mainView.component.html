@@ -13,13 +13,10 @@
   <div class="row">
     <div *ngFor="let card of cards" class="container col-md-3">
       <card [model]="card" [parent]="true"></card>
-      <div class="well well-sm">
-        <card [model]="card" ></card>
-        <card [model]="card" ></card>
-        <card [model]="card" ></card>
-        <card [model]="card" ></card>
-        <card [model]="card" ></card>
-        <card [model]="card" ></card>
+      <div class="well well-sm" *ngIf="card.subCards.length > 0" >
+        <div *ngFor="let subCard of card.subCards">
+          <card [model]="subCard"></card>
+        </div>
       </div>
     </div>
   </div>

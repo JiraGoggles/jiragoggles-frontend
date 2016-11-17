@@ -12,4 +12,5 @@ export class Card {
   description: string;
   url: string;
   avatarUrls: Dictionary;
+  subCards: Card[]
 }
