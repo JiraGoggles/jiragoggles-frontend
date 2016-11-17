@@ -12,17 +12,9 @@ export class ProjectsService {
     this.http = http;
   }
 
-  private checkForError(resp: Response): Response {
-    console.log(resp.status);
-    console.log(resp.json());
-    console.log(resp.headers);
-    return resp;
-  }
-
   getData() {
     return this.http
       .get(ENV_REST_API_URL + '/projects')
-      .map(this.checkForError)
       .map(res => res.json());
   }
 }

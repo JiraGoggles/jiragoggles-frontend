@@ -7,12 +7,12 @@ import {ProjectsService} from "./projectsService/projects.service";
 
 @Component({
   selector: 'test',
-  templateUrl: './test.component.html',
-  styleUrls: [ './test.component.css' ],
+  templateUrl: 'mainView.component.html',
+  styleUrls: [ 'mainView.component.css' ],
   providers: [ProjectsService]
 })
 
-export class TestComponent {
+export class MainViewComponent {
   cards:Card[] = [];
 
   constructor(projectsService: ProjectsService) {
