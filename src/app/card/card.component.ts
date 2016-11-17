@@ -10,6 +10,7 @@ import {Card} from "./card";
 })
 
 export class CardComponent {
-  @Input() model:Card;
+  @Input() model: Card;
+  @Input() parent: boolean = false;
 }
 
