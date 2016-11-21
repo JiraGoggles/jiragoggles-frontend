@@ -14,7 +14,7 @@ export class ProjectsService {
 
   getData() {
     return this.http
-      .get(ENV_REST_API_URL + '/projects')
+      .get(ENV_REST_API_URL + '/card/project')
       .map(res => res.json());
   }
 }
