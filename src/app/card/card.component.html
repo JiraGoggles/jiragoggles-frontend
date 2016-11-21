@@ -10,7 +10,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      <div *ngIf="model.avatarUrls['48x48']" class="col-md-2">
+      <div *ngIf="model.avatarUrls" class="col-md-2">
         <span class="aui-avatar aui-avatar-project aui-avatar-medium">
               <span class="aui-avatar-inner">
                   <img src="{{model.avatarUrls['48x48']}}">
@@ -18,7 +18,7 @@
         </span>
 
       </div>
-      <div [class]="model.avatarUrls['48x48'] ? 'col-md-10' : ''">
+      <div [class]="model.avatarUrls ? 'col-md-10' : ''">
         <span style="white-space: normal">
           {{model.description}}
         </span>
