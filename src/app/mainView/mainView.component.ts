@@ -9,14 +9,16 @@ import {ProjectsService} from "./projectsService/projects.service";
   selector: 'test',
   templateUrl: 'mainView.component.html',
   styleUrls: [ 'mainView.component.css' ],
-  providers: [ProjectsService]
 })
 
 export class MainViewComponent {
   cards:Card[] = [];
 
-  constructor(projectsService: ProjectsService) {
-    projectsService.getData()
-       .subscribe(resp => this.cards = resp);
+  constructor(private projectsService: ProjectsService) {
+  }
+
+  ngOnInit() {
+    this.projectsService.getData()
+      .subscribe(resp => this.cards = resp);
   }
 }
