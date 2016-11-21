@@ -3,12 +3,12 @@
 // rc2 workaround
 import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
 import { enableProdMode, ApplicationRef } from '@angular/core';
+import {ProjectsService} from "./mainView/projectsService/projects.service";
+import {ProjectsMockService} from "./mainView/projectsService/projects-mock.service";
 // Environment Providers
 let PROVIDERS: any[] = [
   // common env directives
 ];
-
-let REST_API_URL: string;
 
 // Angular debug tools in the dev console
 // https://github.com/angular/angular/blob/86405345b781a9dc2438c0fbe3e9409245647019/TOOLS_JS.md
@@ -21,10 +21,9 @@ if ('production' === ENV) {
 
   PROVIDERS = [
     ...PROVIDERS,
+    ProjectsService
     // custom providers in production
   ];
-
-  REST_API_URL = '';
 
 } else {
 
@@ -42,10 +41,9 @@ if ('production' === ENV) {
   // Development
   PROVIDERS = [
     ...PROVIDERS,
+    {provide: ProjectsService, useClass: ProjectsMockService}
     // custom providers in development
   ];
-
-  REST_API_URL = 'http://localhost:4000';
 }
 
 export const decorateModuleRef = _decorateModuleRef;
@@ -53,5 +51,3 @@ export const decorateModuleRef = _decorateModuleRef;
 export const ENV_PROVIDERS = [
   ...PROVIDERS
 ];
-
-export const ENV_REST_API_URL = REST_API_URL;

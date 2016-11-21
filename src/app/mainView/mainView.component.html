@@ -11,7 +11,7 @@
 
 <div class="container-fluid container-scroll">
   <div class="row">
-    <div *ngFor="let card of cards" class="container col-md-3">
+    <div *ngFor="let card of cards" class="col-md-3">
       <card [model]="card" [parent]="true"></card>
       <div class="well well-sm" *ngIf="card.subCards.length > 0" >
         <div *ngFor="let subCard of card.subCards">
