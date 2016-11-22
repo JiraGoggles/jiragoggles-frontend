@@ -16,7 +16,6 @@ export class ProjectComponent extends BaseKeyView {
 
   constructor(route: ActivatedRoute, service: ProjectService) {
     super(route,  service);
-    console.log("Project Component constructed." + this.key);
   }
 }
 

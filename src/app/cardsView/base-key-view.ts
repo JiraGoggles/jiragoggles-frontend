@@ -13,8 +13,6 @@ export class BaseKeyView {
   constructor(protected route: ActivatedRoute, protected service: CardsService) { }
 
   ngOnInit() {
-    console.log("Base ngOnInit().");
-
     this.route.params
       .map(params => params['key'])
       .subscribe(key => {
