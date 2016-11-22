@@ -9,6 +9,7 @@ interface Dictionary {
 export class Card {
   key: string;
   name: string;
+  type: string;
   description: string;
   url: string;
   avatarUrls: Dictionary;

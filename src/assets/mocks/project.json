@@ -1,0 +1,73 @@
+[
+  {
+    "id": "10011",
+    "key": "SC-1",
+    "name": "Important epic!",
+    "type": "epic",
+    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+    "description": "Example important epic.",
+    "avatarUrls": null,
+    "subCards": [
+      {
+        "id": "10011",
+        "key": "SC-8",
+        "name": "Initial task",
+        "type": "task",
+        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+        "description": "First and most important task.",
+        "avatarUrls": null,
+        "subCards": null
+      },
+      {
+        "id": "10002",
+        "key": "SC-9",
+        "name": "Random story",
+        "type": "story",
+        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+        "description": "Long description story. Long long long long long long long long long. Very long long long long long long.",
+        "avatarUrls": null,
+        "subCards": null
+      },
+      {
+        "id": "10003",
+        "key": "SC-10",
+        "name": "Random task",
+        "type": "task",
+        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+        "description": "This is very important task! Truly important.",
+        "avatarUrls": null,
+        "subCards": null
+      }
+    ]
+  },
+  {
+    "id": "10002",
+    "key": "SC-2",
+    "name": "EpicName",
+    "type": "epic",
+    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+    "description": "Livestream from cameras",
+    "avatarUrls": null,
+    "subCards": null
+  },
+  {
+    "id": "10003",
+    "key": "SC-3",
+    "name": "Random epic",
+    "type": "epic",
+    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+    "description": "Best epic ever.",
+    "avatarUrls": null,
+    "subCards": null
+  },
+  {
+    "id": "10004",
+    "key": "SC-4",
+    "name": "Long epic",
+    "type": "epic",
+    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+    "description": "Best epic ever. Loooooooooooong description, very very looooooong description. Long long long long long long and longer longer longer longer.",
+    "avatarUrls": null,
+    "subCards": null
+  }
+]

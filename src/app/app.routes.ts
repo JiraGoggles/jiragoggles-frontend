@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
 
-import {MainViewComponent} from "./mainView/mainView.component";
+import { NoContentComponent } from './no-content';
+import {ProjectComponent} from "./cardsView/project/project.component";
+import {HomeComponent} from "./cardsView/home/home.component";
 
 export const ROUTES: Routes = [
-  { path: '',      component: MainViewComponent },
-  { path: 'home', component: MainViewComponent},
-  { path: '**',    component: NoContentComponent },
+  { path: '',      component: HomeComponent },
+  { path: 'home', component: HomeComponent},
+  { path: 'project/:key', component: ProjectComponent},
+  { path: '**',    component: NoContentComponent }
 ];

@@ -3,8 +3,8 @@
 // rc2 workaround
 import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
 import { enableProdMode, ApplicationRef } from '@angular/core';
-import {ProjectsService} from "./mainView/projectsService/projects.service";
-import {ProjectsMockService} from "./mainView/projectsService/projects-mock.service";
+import {ProjectService} from "./cardsView/services/project/project.service";
+import {ProjectsMockService} from "./cardsView/services/project/project-mock.service";
 // Environment Providers
 let PROVIDERS: any[] = [
   // common env directives
@@ -21,7 +21,7 @@ if ('production' === ENV) {
 
   PROVIDERS = [
     ...PROVIDERS,
-    ProjectsService
+    ProjectService
     // custom providers in production
   ];
 
@@ -41,7 +41,7 @@ if ('production' === ENV) {
   // Development
   PROVIDERS = [
     ...PROVIDERS,
-    {provide: ProjectsService, useClass: ProjectsMockService}
+    {provide: ProjectService, useClass: ProjectsMockService}
     // custom providers in development
   ];
 }
