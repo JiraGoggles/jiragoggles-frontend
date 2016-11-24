@@ -2,11 +2,10 @@ import { Routes } from '@angular/router';
 
 import { NoContentComponent } from './no-content';
 import {ProjectComponent} from "./cardsView/project/project.component";
-import {HomeComponent} from "./cardsView/home/home.component";
+import {RootComponent} from "./cardsView/root/root.component";
 
 export const ROUTES: Routes = [
-  { path: '',      component: HomeComponent },
-  { path: 'home', component: HomeComponent},
+  { path: '',      component: RootComponent },
   { path: 'project/:key', component: ProjectComponent},
   { path: '**',    component: NoContentComponent }
 ];

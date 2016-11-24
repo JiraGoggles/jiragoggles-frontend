@@ -18,7 +18,7 @@ import { AppState, InternalStateType } from './app.service';
 import { CardComponent } from './card';
 import { NoContentComponent } from './no-content';
 import {ProjectComponent} from "./cardsView/project/project.component";
-import {HomeComponent} from "./cardsView/home/home.component";
+import {RootComponent} from "./cardsView/root/root.component";
 import { ReadMoreComponent } from "./readMoreComponent/readMore.component";
 
 
@@ -41,7 +41,7 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    HomeComponent,
+    RootComponent,
     ProjectComponent,
     CardComponent,
     NoContentComponent,

@@ -11,7 +11,7 @@ import {ProjectService} from "../services/project/project.service";
   styleUrls: [ '../base-view.component.css' ],
 })
 
-export class HomeComponent {
+export class RootComponent {
   cards:Card[] = [];
 
   constructor(private projectsService: ProjectService) {
