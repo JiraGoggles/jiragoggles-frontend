@@ -6,7 +6,7 @@ interface Dictionary {
 }
 
 
-export class Card {
+export interface Card {
   key: string;
   name: string;
   type: string;
