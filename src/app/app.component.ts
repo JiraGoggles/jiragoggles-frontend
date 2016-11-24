@@ -16,7 +16,6 @@ import { AppState } from './app.service';
     './app.component.css'
   ],
   template: `
-    <br/>
     <main class="col-md-12 center-block">
       <router-outlet></router-outlet>
     </main>

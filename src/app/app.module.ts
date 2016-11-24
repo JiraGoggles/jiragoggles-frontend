@@ -15,9 +15,10 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 
-import { MainViewComponent } from './mainView';
 import { CardComponent } from './card';
 import { NoContentComponent } from './no-content';
+import {ProjectComponent} from "./cardsView/project/project.component";
+import {HomeComponent} from "./cardsView/home/home.component";
 
 
 // Application wide providers
@@ -39,7 +40,8 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    MainViewComponent,
+    HomeComponent,
+    ProjectComponent,
     CardComponent,
     NoContentComponent
   ],

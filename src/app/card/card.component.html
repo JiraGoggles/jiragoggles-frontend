@@ -5,7 +5,7 @@
       <h3 class="panel-title">
         {{model.name}}
         <strong>
-          <a href="{{model.url}}" class="navbar-link" [style.color]="parent ? 'white' : 'blue'">[{{model.key}}]</a>
+          <a [routerLink]="['/' + type, model.key]" class="navbar-link" [style.color]="parent ? 'white' : 'blue'">[{{model.key}}]</a>
         </strong>
       </h3>
     </div>
