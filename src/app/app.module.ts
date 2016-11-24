@@ -19,6 +19,7 @@ import { CardComponent } from './card';
 import { NoContentComponent } from './no-content';
 import {ProjectComponent} from "./cardsView/project/project.component";
 import {HomeComponent} from "./cardsView/home/home.component";
+import { ReadMoreComponent } from "./readMoreComponent/readMore.component";
 
 
 // Application wide providers
@@ -43,7 +44,8 @@ type StoreType = {
     HomeComponent,
     ProjectComponent,
     CardComponent,
-    NoContentComponent
+    NoContentComponent,
+    ReadMoreComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
