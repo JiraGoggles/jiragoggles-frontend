@@ -15,6 +15,11 @@ before_install:
   - sleep 3
   # Updating NPM to relevant version >= 3 on Node.JS LTS
   - npm i -g npm@^3
+  - npm install -g webpack
+  - npm install -g webpack-dev-server
+  - npm install -g karma-cli
+  - npm install -g protractor
+  - npm install -g typescript
 install:
   - yarn
 before_script:
@@ -25,8 +30,8 @@ before_script:
   - npm start &
   - sleep 5
 script:
-  - npm test
-  - npm run e2e
+  # - npm test
+  # - npm run e2e
   - npm run build:docker
 cache:
   directories:
