@@ -20,6 +20,7 @@ import { NoContentComponent } from './no-content';
 import {ProjectComponent} from "./cardsView/project/project.component";
 import {RootComponent} from "./cardsView/root/root.component";
 import { ReadMoreComponent } from "./readMoreComponent/readMore.component";
+import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
 
 
 // Application wide providers
@@ -44,6 +45,7 @@ type StoreType = {
     RootComponent,
     ProjectComponent,
     CardComponent,
+    BreadcrumbComponent,
     NoContentComponent,
     ReadMoreComponent
   ],

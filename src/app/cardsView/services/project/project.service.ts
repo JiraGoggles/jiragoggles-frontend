@@ -24,13 +24,13 @@ export class ProjectService implements CardsService {
   getAll(): Observable<Card[]> {
 
     return this.http
-      .get('api/project', this.options)
+      .get('api/card/project', this.options)
       .map(res => res.json());
   }
 
   get(key: string): Observable<Card[]> {
     return this.http
-      .get('api/project/' + key, this.options)
+      .get('api/card/project/' + key, this.options)
       .map(res => res.json());
   }
 }
