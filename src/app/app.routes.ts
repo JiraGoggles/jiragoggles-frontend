@@ -7,5 +7,5 @@ import {RootComponent} from "./cardsView/root/root.component";
 export const ROUTES: Routes = [
   { path: '',      component: RootComponent },
   { path: 'project/:key', component: ProjectComponent},
-  { path: '**',    component: NoContentComponent }
+  { path: '**',    redirectTo: '' }
 ];
