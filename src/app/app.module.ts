@@ -20,12 +20,15 @@ import { NoContentComponent } from './no-content';
 import {ProjectComponent} from "./cardsView/project/project.component";
 import {RootComponent} from "./cardsView/root/root.component";
 import { ReadMoreComponent } from "./readMoreComponent/readMore.component";
+import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
+import {AppAuthenticationService} from "./app-authentication.service";
 
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
+  AppAuthenticationService
 ];
 
 type StoreType = {
@@ -44,6 +47,7 @@ type StoreType = {
     RootComponent,
     ProjectComponent,
     CardComponent,
+    BreadcrumbComponent,
     NoContentComponent,
     ReadMoreComponent
   ],

@@ -8,10 +8,9 @@ import {Card} from "../../../card/card";
 import {Observable} from "rxjs";
 
 @Injectable()
-export class ProjectsMockService extends ProjectService {
+export class ProjectsMockService {
 
-  constructor(http: Http) {
-    super(http);
+  constructor(private http: Http) {
   }
 
   getAll(): Observable<Card[]> {
