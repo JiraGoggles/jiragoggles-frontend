@@ -1,4 +1,6 @@
 # Jira Goggles
+[![Build Status](https://travis-ci.org/JiraGoggles/jiragoggles-frontend.svg)](https://travis-ci.org/JiraGoggles/jiragoggles-frontend)
+
 Jira Goggles project - client.
 ##Quickstart
 ###Before start:
