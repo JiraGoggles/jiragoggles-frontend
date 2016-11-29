@@ -25,6 +25,8 @@ export class ReadMoreComponent implements OnChanges {
         this.determineView();
     }
     determineView() {
+      if(!this.text)
+        return;
         if (this.text.length <= this.maxLength) {
             this.currentText = this.text;
             this.isCollapsed = false;
