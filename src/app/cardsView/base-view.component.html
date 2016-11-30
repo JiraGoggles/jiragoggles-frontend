@@ -2,7 +2,7 @@
   <div class="row">
     <div *ngFor="let card of cards" class="col-md-3">
       <card [model]="card" [parent]="true" [type]="card.type | lowercase"></card>
-      <div class="well well-sm" *ngIf="card.subCards" >
+      <div class="well well-sm" style="height: 73vh; white-space: nowrap; overflow-y: scroll;" *ngIf="card.subCards" >
         <div *ngFor="let subCard of card.subCards">
           <card [model]="subCard" [type]="subCard.type"></card>
         </div>
