@@ -3,8 +3,8 @@
  */
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {BaseKeyView} from "../base-key-view";
 import {ProjectService} from "../services/project/project.service";
+import {Card} from "../../card/card";
 
 
 @Component({
@@ -12,10 +12,22 @@ import {ProjectService} from "../services/project/project.service";
   templateUrl: '../base-view.component.html',
   styleUrls: [ '../base-view.component.css' ]
 })
-export class ProjectComponent extends BaseKeyView {
+export class ProjectComponent {
+  private cards: Card[];
+  private key: number;
 
-  constructor(route: ActivatedRoute, service: ProjectService) {
-    super(route,  service);
+  constructor(private route: ActivatedRoute, private service: ProjectService) {
+  }
+
+  ngOnInit() {
+    this.route.params
+      .map(params => params['key'])
+      .subscribe(key => {
+        this.key = key;
+        this.service
+          .get(key)
+          .subscribe(cards => this.cards = cards);
+      });
   }
 }
 

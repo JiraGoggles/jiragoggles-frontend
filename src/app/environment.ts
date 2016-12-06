@@ -4,7 +4,14 @@
 import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
 import { enableProdMode, ApplicationRef } from '@angular/core';
 import {ProjectService} from "./cardsView/services/project/project.service";
-import {ProjectsMockService} from "./cardsView/services/project/project-mock.service";
+import {ProjectMockService} from "./cardsView/services/project/project-mock.service";
+import {EpicService} from "./cardsView/services/epic/epic.service";
+import {StoryService} from "./cardsView/services/story/story.service";
+import {RootService} from "./cardsView/services/root/root.service";
+import {RootMockService} from "./cardsView/services/root/root-mock.service";
+import {EpicMockService} from "./cardsView/services/epic/epic-mock.service";
+import {StoryMockService} from "./cardsView/services/story/story-mock.service";
+
 // Environment Providers
 let PROVIDERS: any[] = [
   // common env directives
@@ -21,7 +28,10 @@ if ('production' === ENV) {
 
   PROVIDERS = [
     ...PROVIDERS,
-    ProjectService
+    RootService,
+    ProjectService,
+    EpicService,
+    StoryService
     // custom providers in production
   ];
 
@@ -41,7 +51,10 @@ if ('production' === ENV) {
   // Development
   PROVIDERS = [
     ...PROVIDERS,
-    {provide: ProjectService, useClass: ProjectsMockService}
+    {provide: RootService, useClass: RootMockService},
+    {provide: ProjectService, useClass: ProjectMockService},
+    {provide: EpicService, useClass: EpicMockService},
+    {provide: StoryService, useClass: StoryMockService}
     // custom providers in development
   ];
 }

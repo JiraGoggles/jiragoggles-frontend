@@ -3,7 +3,7 @@
  */
 import {Component} from '@angular/core';
 import {Card} from "../../card/card";
-import {ProjectService} from "../services/project/project.service";
+import {RootService} from "../services/root/root.service";
 
 @Component({
   selector: 'test',
@@ -14,11 +14,11 @@ import {ProjectService} from "../services/project/project.service";
 export class RootComponent {
   cards:Card[] = [];
 
-  constructor(private projectsService: ProjectService) {
+  constructor(private projectsService: RootService) {
   }
 
   ngOnInit() {
-    this.projectsService.getAll()
+    this.projectsService.get()
       .subscribe(resp => this.cards = resp);
   }
 }
