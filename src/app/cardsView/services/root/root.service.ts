@@ -9,13 +9,13 @@ import {CardsService} from "../cards-service";
 import {AppAuthenticationService} from "../../../app-authentication.service";
 
 @Injectable()
-export class ProjectService {
+export class RootService {
   constructor(protected http: Http, private pluginAuth: AppAuthenticationService) {
   }
 
-  get(key: string): Observable<Card[]> {
+  get(): Observable<Card[]> {
     return this.http
-      .get('api/card/project/' + key, this.pluginAuth.RequestOptionsWithPluginAuthentication)
+      .get('api/card/project', this.pluginAuth.RequestOptionsWithPluginAuthentication)
       .map(res => res.json());
   }
 }

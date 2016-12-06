@@ -8,14 +8,14 @@ import {Card} from "../../../card/card";
 import {Observable} from "rxjs";
 
 @Injectable()
-export class ProjectMockService {
+export class RootMockService {
 
   constructor(private http: Http) {
   }
 
-  get(key: string): Observable<Card[]> {
+  get(): Observable<Card[]> {
     return this.http
-      .get('/assets/mocks/project.json')
+      .get('/assets/mocks/projects.json')
       .map(res => res.json());
   }
 }
