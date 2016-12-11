@@ -24,6 +24,8 @@ import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
 import {AppAuthenticationService} from "./app-authentication.service";
 import {ChildCardComponent} from "./card/child-card/child-card.component";
 import {ParentCardComponent} from "./card/parent-card/parent-card.component";
+import {EpicComponent} from "./cardsView/epic/epic.component";
+import {StoryComponent} from "./cardsView/story/story.component";
 
 
 // Application wide providers
@@ -48,6 +50,8 @@ type StoreType = {
     AppComponent,
     RootComponent,
     ProjectComponent,
+    EpicComponent,
+    StoryComponent,
     ChildCardComponent,
     ParentCardComponent,
     BreadcrumbComponent,

@@ -12,7 +12,7 @@ import {ChildCard} from "../card";
 export class ChildCardComponent implements  OnInit {
   @Input() model: ChildCard;
   @Input() type: string;
-  private jiraUrl: string = "";
+  protected jiraUrl: string = "";
 
   ngOnInit(): void {
     //TODO Is there any other way to get the jira base url?

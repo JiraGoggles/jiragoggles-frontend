@@ -15,7 +15,7 @@ export class EpicMockService {
 
   get(projectKey: string, key: string): Observable<ParentCard[]> {
     return this.http
-      .get('/assets/mocks/epicks.json')
+      .get('/assets/mocks/epic.json')
       .map(res => res.json());
   }
 }

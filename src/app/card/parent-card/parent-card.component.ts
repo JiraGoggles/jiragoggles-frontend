@@ -3,6 +3,7 @@
  */
 import {Component, Input, OnInit} from '@angular/core';
 import {ParentCard} from "../card";
+import {ChildCardComponent} from "../child-card/child-card.component";
 
 enum StatusType {
   TO_DO,
@@ -16,14 +17,17 @@ enum StatusType {
   templateUrl: './parent-card.component.html'
 })
 
-export class ParentCardComponent implements OnInit {
+export class ParentCardComponent extends ChildCardComponent implements OnInit {
   @Input() model: ParentCard;
   @Input() type: string;
   private path: string;
   private statusType = StatusType;
   private status: StatusType;
+  private JiraUrl: string;
 
   ngOnInit(): void {
+    super.ngOnInit();
+    this.JiraUrl = this.jiraUrl;
     if(this.model.type == 'project')
       this.path = 'project/' + this.model.key;
     else
