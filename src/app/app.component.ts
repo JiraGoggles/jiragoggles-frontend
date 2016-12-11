@@ -2,8 +2,8 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-
 import { AppState } from './app.service';
+import {SessionService} from "./session.service";
 
 /*
  * App Component
@@ -26,20 +26,17 @@ import { AppState } from './app.service';
     </main>
   `
 })
+
 export class AppComponent {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
-
   constructor(
-    public appState: AppState) {
-
+    public appState: AppState,
+    private sessionService: SessionService) {
   }
 
   ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    this.sessionService.loadLastSession();
+    this.sessionService.startSessionUrlUpdate();
   }
-
 }
 
 /*
