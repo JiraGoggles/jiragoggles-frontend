@@ -1,17 +1,17 @@
 
 <!--<div class="panel panel-default">-->
-<div [class]="parent ? 'panel panel-primary' : 'panel panel-default'" >
-
+<div class="panel panel-default" >
     <div class="panel-heading" >
-      <a role="button" data-toggle="collapse" data-target="{{model.key}}" href="#{{model.key}}" aria-expanded="true" style="text-decoration:none;">
+      <!--<a role="button" data-toggle="collapse" data-target="{{model.key}}" href="#{{model.key}}" aria-expanded="true"-->
+         <!--style="text-decoration:none;">-->
         <div>
           <h3 class="panel-title">
             <strong>
-              <a [routerLink]="['/' + type, model.key]" class="navbar-link" [style.color]="parent ? 'white' : 'blue'">[{{model.key}}]</a>
+              <a href="{{jiraUrl}}" class="navbar-link">[{{model.key}}]</a>
             </strong>
           </h3>
         </div>
-      </a>
+      <!--</a>-->
     </div>
   <div class="panel-body collapse in" id="{{model.key}}">
       <div *ngIf="model.avatarUrls" class="col-md-2">

@@ -12,7 +12,7 @@ import {RootService} from "../services/root/root.service";
 })
 
 export class RootComponent {
-  cards:Card[] = [];
+  private cards:Card[] = [];
 
   constructor(private projectsService: RootService) {
   }

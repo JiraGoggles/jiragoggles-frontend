@@ -1,10 +1,10 @@
 <div class="container-fluid container-scroll">
   <div class="row">
     <div *ngFor="let card of cards" class="col-md-3">
-      <card [model]="card" [parent]="true" [type]="card.type | lowercase"></card>
+      <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
       <div class="well well-sm" style="height: 73vh; white-space: nowrap; overflow-y: scroll;" *ngIf="card.subCards" >
         <div *ngFor="let subCard of card.subCards">
-          <card [model]="subCard" [type]="subCard.type"></card>
+          <child-card [model]="subCard" [type]="subCard.type"></child-card>
         </div>
       </div>
     </div>

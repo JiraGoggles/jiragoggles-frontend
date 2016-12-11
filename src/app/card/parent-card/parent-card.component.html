@@ -1,0 +1,33 @@
+
+<!--<div class="panel panel-default">-->
+<div class="panel panel-primary">
+
+  <div class="panel-heading" >
+    <div>
+      <h3 class="panel-title">
+        <strong>
+          <a [routerLink]="path" class="navbar-link" style="color: white">[{{model.key}}]</a>
+        </strong>
+      </h3>
+    </div>
+  </div>
+  <div class="panel-body collapse in" id="{{model.key}}">
+    <div *ngIf="model.avatarUrls" class="col-md-2">
+        <span class="aui-avatar aui-avatar-project aui-avatar-medium">
+              <span class="aui-avatar-inner">
+                  <img src="{{model.avatarUrls['48x48']}}">
+              </span>
+        </span>
+
+    </div>
+    <div [class]="model.avatarUrls ? 'col-md-10' : ''">
+        <span style="white-space: normal">
+            <read-more [text]="model.name">
+            </read-more>
+        </span>
+
+    </div>
+
+
+  </div>
+</div>
