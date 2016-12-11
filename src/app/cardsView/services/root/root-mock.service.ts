@@ -15,7 +15,7 @@ export class RootMockService {
 
   get(): Observable<ParentCard[]> {
     return this.http
-      .get('/assets/mocks/projects.json')
+      .get('/assets/mocks/root.json')
       .map(res => res.json());
   }
 }

@@ -14,7 +14,7 @@ export class BreadcrumbComponent implements OnInit {
   private items: BreadcrumbItem[];
 
   constructor(private router: Router) {
-    this.levelNames = ['Root', 'Project', 'Issue'];
+    this.levelNames = ['Root', 'Project', 'Epic', 'Issue'];
     this.parseUrlToBreadcrumbItems('/');
   }
 
