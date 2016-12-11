@@ -1,0 +1,28 @@
+
+<!--<div class="panel panel-default">-->
+<div class="panel panel-default" >
+    <div class="panel-heading" >
+      <!--<a role="button" data-toggle="collapse" data-target="{{model.key}}" href="#{{model.key}}" aria-expanded="true"-->
+         <!--style="text-decoration:none;">-->
+        <div>
+          <h3 class="panel-title">
+            <strong>
+              <a href="{{jiraUrl}}" class="navbar-link">[{{model.key}}]</a>
+            </strong>
+          </h3>
+        </div>
+      <!--</a>-->
+    </div>
+  <div class="panel-body collapse in" id="{{model.key}}">
+    <div class="col-xs-2" style="padding: 0px 15px 0px 0px; max-width: 40px">
+      <img src="{{model.typeImgUrl}}" class="img-responsive"/>
+      <img src="{{model.priorityImgUrl}}" class="img-responsive"/>
+    </div>
+    <div class="col-xs-10">
+      <span style="white-space: normal">
+          <read-more [text]="model.name">
+          </read-more>
+      </span>
+    </div>
+  </div>
+</div>

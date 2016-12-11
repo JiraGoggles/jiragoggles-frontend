@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ProjectService} from "../services/project/project.service";
-import {Card} from "../../card/card";
+import {ParentCard} from "../../card/card";
 
 
 @Component({
@@ -13,7 +13,7 @@ import {Card} from "../../card/card";
   styleUrls: [ '../base-view.component.css' ]
 })
 export class ProjectComponent {
-  private cards: Card[];
+  private cards: ParentCard[];
   private key: number;
 
   constructor(private route: ActivatedRoute, private service: ProjectService) {

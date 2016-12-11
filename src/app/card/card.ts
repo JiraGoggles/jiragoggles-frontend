@@ -1,17 +1,27 @@
 /**
  * Created by wiekonek on 10.11.16.
  */
-interface Dictionary {
-  [ index: string ]: string
+interface Dictionary<T> {
+  [ index: string ]: T
 }
 
+export interface ParentCard extends Card {
+  subCards: ChildCard[];
 
-export interface Card {
+  status?: string; // 'TO DO' / 'IN PROGRESS' / 'DONE'
+  avatarUrls?: Dictionary<string>;
+}
+
+export interface  ChildCard extends Card {
+
+}
+
+interface Card {
   key: string;
-  name: string;
   type: string;
-  description: string;
-  url: string;
-  avatarUrls: Dictionary;
-  subCards: Card[]
+  url: string; // TODO Api url isn't necessary. I'd like to have an url to JIRA page here.
+
+  name: string;
+  typeImgUrl: string;
+  priorityImgUrl: string;
 }

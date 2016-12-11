@@ -1,0 +1,43 @@
+
+<!--<div class="panel panel-default">-->
+<div class="panel panel-primary">
+
+  <div class="panel-heading" >
+    <div>
+      <h3 class="panel-title">
+        <strong>
+          <a [routerLink]="path" class="navbar-link" style="color: white">[{{model.key}}]</a>
+        </strong>
+      </h3>
+    </div>
+  </div>
+  <div class="panel-body collapse in" id="{{model.key}}">
+    <div *ngIf="model.type == 'project'" class="col-xs-2" style="padding: 0px 10px 0px 0px; max-width: 60px">
+      <img src="{{model.avatarUrls['48x48']}}" class="img-responsive"/>
+    </div>
+    <div *ngIf="model.type != 'project'" class="col-xs-2" style="padding: 0px 15px 0px 0px; max-width: 40px">
+      <img src="{{model.typeImgUrl}}" class="img-responsive"/>
+      <img src="{{model.priorityImgUrl}}" class="img-responsive"/>
+    </div>
+    <div class="col-xs-10">
+      <div class="row">
+            <span style="white-space: normal">
+            <read-more [text]="model.name">
+            </read-more>
+        </span>
+      </div>
+      <div class="row">
+        <span
+          [ngClass]="{
+            'label-primary': status == statusType.TO_DO,
+            'label-warning': status == statusType.IN_PROGRESS,
+            'label-success': status == statusType.DONE,
+            'label-default': status == statusType.OTHER
+          }"
+          class="label">{{model.status}}</span>
+      </div>
+    </div>
+
+
+  </div>
+</div>

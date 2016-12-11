@@ -3,7 +3,7 @@
  */
 import {Injectable} from "@angular/core";
 import {Http, RequestOptions, URLSearchParams} from "@angular/http";
-import {Card} from "../../../card/card";
+import {ParentCard} from "../../../card/card";
 import {Observable} from "rxjs";
 import {CardsService} from "../cards-service";
 import {AppAuthenticationService} from "../../../app-authentication.service";
@@ -13,7 +13,7 @@ export class RootService {
   constructor(protected http: Http, private pluginAuth: AppAuthenticationService) {
   }
 
-  get(): Observable<Card[]> {
+  get(): Observable<ParentCard[]> {
     return this.http
       .get('api/card/project', this.pluginAuth.RequestOptionsWithPluginAuthentication)
       .map(res => res.json());

@@ -22,6 +22,8 @@ import {RootComponent} from "./cardsView/root/root.component";
 import { ReadMoreComponent } from "./readMoreComponent/readMore.component";
 import {BreadcrumbComponent} from "./breadcrumb/breadcrumb.component";
 import {AppAuthenticationService} from "./app-authentication.service";
+import {ChildCardComponent} from "./card/child-card/child-card.component";
+import {ParentCardComponent} from "./card/parent-card/parent-card.component";
 
 
 // Application wide providers
@@ -46,7 +48,8 @@ type StoreType = {
     AppComponent,
     RootComponent,
     ProjectComponent,
-    CardComponent,
+    ChildCardComponent,
+    ParentCardComponent,
     BreadcrumbComponent,
     NoContentComponent,
     ReadMoreComponent

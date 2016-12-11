@@ -4,7 +4,7 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import {ProjectService} from "./project.service";
-import {Card} from "../../../card/card";
+import {ParentCard} from "../../../card/card";
 import {Observable} from "rxjs";
 
 @Injectable()
@@ -13,7 +13,7 @@ export class RootMockService {
   constructor(private http: Http) {
   }
 
-  get(): Observable<Card[]> {
+  get(): Observable<ParentCard[]> {
     return this.http
       .get('/assets/mocks/projects.json')
       .map(res => res.json());

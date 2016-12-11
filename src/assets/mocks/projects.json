@@ -20,6 +20,8 @@
         "type": "epic",
         "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
         "description": "adadada",
+        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
         "avatarUrls": null,
         "subCards": null
       },
@@ -30,6 +32,7 @@
         "type": "epic",
         "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
         "description": "Livestream from cameras",
+        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
         "avatarUrls": null,
         "subCards": null
       },
@@ -40,6 +43,7 @@
         "type": "epic",
         "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
         "description": "Best epic ever.",
+        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
         "avatarUrls": null,
         "subCards": null
       },
@@ -50,6 +54,7 @@
         "type": "epic",
         "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
         "description": "Best epic ever. Loooooooooooong description, very very looooooong description. Long long long long long long and longer longer longer longer.",
+        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
         "avatarUrls": null,
         "subCards": null
       }
