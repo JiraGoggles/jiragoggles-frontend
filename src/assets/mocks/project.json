@@ -6,6 +6,9 @@
     "type": "epic",
     "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
     "description": "Example important epic.",
+    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+    "status": "TO DO",
     "avatarUrls": null,
     "subCards": [
       {
@@ -16,6 +19,7 @@
         "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
         "description": "First and most important task.",
         "avatarUrls": null,
+        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
         "subCards": null
       },
       {
@@ -25,6 +29,7 @@
         "type": "story",
         "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
         "description": "Long description story. Long long long long long long long long long. Very long long long long long long.",
+        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
         "avatarUrls": null,
         "subCards": null
       },
@@ -35,6 +40,7 @@
         "type": "task",
         "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
         "description": "This is very important task! Truly important.",
+        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
         "avatarUrls": null,
         "subCards": null
       }
@@ -47,6 +53,9 @@
     "type": "epic",
     "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
     "description": "Livestream from cameras",
+    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+    "status": "IN PROGRESS",
     "avatarUrls": null,
     "subCards": null
   },
@@ -57,17 +66,22 @@
     "type": "epic",
     "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
     "description": "Best epic ever.",
+    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+    "status": "DONE",
     "avatarUrls": null,
     "subCards": null
   },
   {
     "id": "10004",
     "key": "SC-4",
-    "name": "Long epic",
+    "name": "Best epic ever. Loooooooooooong description, very very looooooong description. Long long long long long long and longer longer longer longer.",
     "type": "epic",
     "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "description": "Best epic ever. Loooooooooooong description, very very looooooong description. Long long long long long long and longer longer longer longer.",
+    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
     "avatarUrls": null,
+    "status": "IN PROGRESS",
     "subCards": null
   }
 ]

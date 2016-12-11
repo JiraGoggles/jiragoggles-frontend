@@ -12,20 +12,30 @@
     </div>
   </div>
   <div class="panel-body collapse in" id="{{model.key}}">
-    <div *ngIf="model.avatarUrls" class="col-md-2">
-        <span class="aui-avatar aui-avatar-project aui-avatar-medium">
-              <span class="aui-avatar-inner">
-                  <img src="{{model.avatarUrls['48x48']}}">
-              </span>
-        </span>
-
+    <div *ngIf="model.type == 'project'" class="col-xs-2" style="padding: 0px 10px 0px 0px; max-width: 60px">
+      <img src="{{model.avatarUrls['48x48']}}" class="img-responsive"/>
     </div>
-    <div [class]="model.avatarUrls ? 'col-md-10' : ''">
-        <span style="white-space: normal">
+    <div *ngIf="model.type != 'project'" class="col-xs-2" style="padding: 0px 15px 0px 0px; max-width: 40px">
+      <img src="{{model.typeImgUrl}}" class="img-responsive"/>
+      <img src="{{model.priorityImgUrl}}" class="img-responsive"/>
+    </div>
+    <div class="col-xs-10">
+      <div class="row">
+            <span style="white-space: normal">
             <read-more [text]="model.name">
             </read-more>
         </span>
-
+      </div>
+      <div class="row">
+        <span
+          [ngClass]="{
+            'label-primary': status == statusType.TO_DO,
+            'label-warning': status == statusType.IN_PROGRESS,
+            'label-success': status == statusType.DONE,
+            'label-default': status == statusType.OTHER
+          }"
+          class="label">{{model.status}}</span>
+      </div>
     </div>
 
 

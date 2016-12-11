@@ -2,7 +2,7 @@
  * Created by wiekonek on 09.11.16.
  */
 import {Component} from '@angular/core';
-import {Card} from "../../card/card";
+import {ParentCard} from "../../card/card";
 import {RootService} from "../services/root/root.service";
 
 @Component({
@@ -12,7 +12,7 @@ import {RootService} from "../services/root/root.service";
 })
 
 export class RootComponent {
-  private cards:Card[] = [];
+  private cards:ParentCard[] = [];
 
   constructor(private projectsService: RootService) {
   }

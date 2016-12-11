@@ -3,7 +3,7 @@
  */
 import {Injectable} from "@angular/core";
 import {Http, RequestOptions, URLSearchParams} from "@angular/http";
-import {Card} from "../../../card/card";
+import {ParentCard} from "../../../card/card";
 import {Observable} from "rxjs";
 import {CardsService} from "../cards-service";
 import {AppAuthenticationService} from "../../../app-authentication.service";
@@ -13,7 +13,7 @@ export class StoryService {
   constructor(protected http: Http, private pluginAuth: AppAuthenticationService) {
   }
 
-  get(projectKey: string, epicKey: string, key: string): Observable<Card[]> {
+  get(projectKey: string, epicKey: string, key: string): Observable<ParentCard[]> {
     return this.http
       .get('api/card/project/' + projectKey + '/' + epicKey + '/' + key, this.pluginAuth.RequestOptionsWithPluginAuthentication)
       .map(res => res.json());
