@@ -2,20 +2,16 @@
  * Created by wiekonek on 21.11.16.
  */
 import {Injectable} from "@angular/core";
+import {BaseCardMockService} from "../base-card-mock.service";
 import {Http} from "@angular/http";
-import {ProjectService} from "./project.service";
-import {ParentCard} from "../../../card/card";
-import {Observable} from "rxjs";
 
 @Injectable()
-export class RootMockService {
-
-  constructor(private http: Http) {
+export class RootMockService extends BaseCardMockService {
+  constructor(http: Http) {
+    super(http);
   }
 
-  get(): Observable<ParentCard[]> {
-    return this.http
-      .get('/assets/mocks/root.json')
-      .map(res => res.json());
+  protected get path(): string {
+    return '/assets/mocks/root.json';
   }
 }
