@@ -170,6 +170,78 @@
   },
   {
     "id": "10001",
+    "key": "SPP",
+    "name": "Second Page Project",
+    "type": "project",
+    "url": "https://testjiragoggles.atlassian.net/rest/api/2/project/10001",
+    "description": "Other super description for project number 2.",
+    "avatarUrls": {
+      "48x48": "https://jira.duraspace.org/secure/projectavatar?pid=10880&avatarId=11175",
+      "24x24": "https://testjiragoggles.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+      "16x16": "https://testjiragoggles.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+      "32x32": "https://testjiragoggles.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+    },
+    "subCards": [
+      {
+        "id": "10036",
+        "key": "NP-14",
+        "name": "EpicName1",
+        "type": "epic",
+        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+        "description": "adadada",
+        "avatarUrls": null,
+        "subCards": null
+      },
+      {
+        "id": "10024",
+        "key": "NP-2",
+        "name": "EpicName",
+        "type": "epic",
+        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+        "description": "Livestream from cameras",
+        "avatarUrls": null,
+        "subCards": null
+      }
+    ]
+  },
+  {
+    "id": "10001",
+    "key": "RP",
+    "name": "Random Project",
+    "type": "project",
+    "url": "https://testjiragoggles.atlassian.net/rest/api/2/project/10001",
+    "description": "Other super description for project number 2.",
+    "avatarUrls": {
+      "48x48": "https://izpack.atlassian.net/secure/useravatar?size=small&avatarId=10520",
+      "24x24": "https://testjiragoggles.atlassian.net/secure/projectavatar?size=small&avatarId=10324",
+      "16x16": "https://testjiragoggles.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10324",
+      "32x32": "https://testjiragoggles.atlassian.net/secure/projectavatar?size=medium&avatarId=10324"
+    },
+    "subCards": [
+      {
+        "id": "10036",
+        "key": "LP-14",
+        "name": "EpicName1",
+        "type": "epic",
+        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+        "description": "adadada",
+        "avatarUrls": null,
+        "subCards": null
+      },
+      {
+        "id": "10024",
+        "key": "LP-2",
+        "name": "EpicName",
+        "type": "epic",
+        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+        "description": "Livestream from cameras",
+        "avatarUrls": null,
+        "subCards": null
+      }
+    ]
+  },
+  {
+    "id": "10001",
     "key": "LP",
     "name": "Last Project",
     "type": "project",

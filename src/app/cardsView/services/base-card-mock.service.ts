@@ -21,9 +21,10 @@ export abstract class BaseCardMockService {
     return this.http.get(this.path).delay(delayTime).map(res => res.json());
   }
 
-  getPage(_: number, size: number, ...__: any[]): Observable<PaginateResponse<ParentCard>> {
+  getPage(page: number, size: number, ...__: any[]): Observable<PaginateResponse<ParentCard>> {
+    let start = (page-1)*size;
     return this.http.get(this.path)
       .delay(delayTime)
-      .map(res => <PaginateResponse<ParentCard>>{ count: size * 2, cards: res.json().slice(0, size)});
+      .map(res => <PaginateResponse<ParentCard>>{ count: size * 2, cards: res.json().slice(start, start + size)});
   }
 }
