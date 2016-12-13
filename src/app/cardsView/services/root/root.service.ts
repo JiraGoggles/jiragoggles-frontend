@@ -2,10 +2,9 @@
  * Created by wiekonek on 10.11.16.
  */
 import {Injectable} from "@angular/core";
-import {Http, RequestOptions, URLSearchParams} from "@angular/http";
+import {Http} from "@angular/http";
 import {ParentCard} from "../../../card/card";
 import {Observable} from "rxjs";
-import {CardsService} from "../cards-service";
 import {AppAuthenticationService} from "../../../app-authentication.service";
 import {PaginateResponse} from "../paginate-response";
 import {BaseCardService} from "../base-card.service";

@@ -14,6 +14,10 @@ export class StoryMockService extends BaseCardMockService {
     super(http);
   }
 
+  protected get count() {
+    return 13;
+  }
+
   protected get path(): string {
     return '/assets/mocks/story.json';
   }
