@@ -16,7 +16,7 @@ export interface  ChildCard extends Card {
 
 }
 
-interface Card {
+export interface Card {
   key: string;
   type: string;
   url: string; // TODO Api url isn't necessary. I'd like to have an url to JIRA page here.
