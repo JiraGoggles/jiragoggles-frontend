@@ -11,7 +11,7 @@ export class ProjectMockService extends BaseCardMockService {
     super(http);
   }
 
-  protected get count() {
+  protected get total() {
     return 4;
   }
 

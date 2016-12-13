@@ -24,7 +24,7 @@ export abstract class BasePaginateCardComponent {
     this.loading = true;
     this.cards = source
       .do(res => {
-        this.total = (<PaginateResponse<ParentCard>>res).count;
+        this.total = (<PaginateResponse<ParentCard>>res).total;
         this.loading = false;
         this.p = page;
       })

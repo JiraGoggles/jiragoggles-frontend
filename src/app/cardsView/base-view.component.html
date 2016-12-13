@@ -1,26 +1,19 @@
 <div [ngClass]="{ 'hidden': !loading }" class="center-block col-12">
-  <img src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" class="center-block" style="width: 5%;"/>
+  <img src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" class="center-block spinner-sm"/>
 </div>
-<div style="position: fixed; top: 3%; right: 5%">
+<div class="pagination-container">
   <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
 </div>
 
 <div class="row" [ngClass]="{ 'hidden': loading }">
   <div class="col-lg-3" *ngFor="let card of cards | async | paginate: { id: 'server', itemsPerPage: perPage, currentPage: p, totalItems: total }">
     <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
-    <div class="well well-sm" style="height: 73vh; white-space: nowrap; overflow-y: scroll;" *ngIf="card.subCards" >
+    <div class="well well-sm well-scroll" *ngIf="card.subCards">
       <div *ngFor="let subCard of card.subCards">
         <child-card [model]="subCard" [type]="subCard.type"></child-card>
       </div>
     </div>
   </div>
 </div>
-
-<!--<nav aria-label="..." style="position: fixed; bottom: 3%; width: 10%; left: 45%">-->
-  <!--<ul class="pager">-->
-    <!--<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>-->
-    <!--<li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>-->
-  <!--</ul>-->
-<!--</nav>-->
 
 

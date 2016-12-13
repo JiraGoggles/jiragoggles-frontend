@@ -14,7 +14,7 @@ export class StoryMockService extends BaseCardMockService {
     super(http);
   }
 
-  protected get count() {
+  protected get total() {
     return 13;
   }
 

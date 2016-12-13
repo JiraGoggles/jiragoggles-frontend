@@ -4,6 +4,6 @@
 import {Card} from "../../card/card";
 
 export interface PaginateResponse<T extends Card> {
-  count: number;
+  total: number;
   cards: T[];
 }
