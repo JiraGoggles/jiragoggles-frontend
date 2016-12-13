@@ -1,7 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, NavigationEnd} from "@angular/router";
-import {BreadcrumbItem} from "./breadcrumb";
+import {BreadcrumbItem, ProjectBreadcrumbItem, IssueBreadcrumbItem} from "./breadcrumb";
 import 'rxjs/add/operator/filter';
+import {ProjectService} from "../cardsView/services/project/project.service";
+import {RootService} from "../cardsView/services/root/root.service";
+import {ParentCard} from "../card/card";
+import {EpicService} from "../cardsView/services/epic/epic.service";
 
 @Component({
   selector: 'breadcrumb',
@@ -10,36 +14,86 @@ import 'rxjs/add/operator/filter';
 
 export class BreadcrumbComponent implements OnInit {
 
-  private levelNames: string[];
-  private items: BreadcrumbItem[];
+  private rootItem: BreadcrumbItem = { url: '/', key: 'Root' }; // always available
+  private projectItem: ProjectBreadcrumbItem = null;
+  private epicItem: IssueBreadcrumbItem = null;
+  private storyItem: IssueBreadcrumbItem = null;
 
-  constructor(private router: Router) {
-    this.levelNames = ['Root', 'Project', 'Epic', 'Issue'];
-    this.parseUrlToBreadcrumbItems('/');
-  }
-
-  private parseUrlToBreadcrumbItems(url: string) {
-    const parts = url.split('/').filter(part => part !== '');
-
-    this.items = [];
-    //the root item is always displayed
-    const rootItem: BreadcrumbItem = { url: '/', name: this.levelNames[0], isActive: false };
-    this.items.push(rootItem);
-
-    for (let i = 2; i <= parts.length; i++) {
-      const url = parts.slice(0, i).join('/');
-      const projectItem: BreadcrumbItem = { url, name: this.levelNames[i - 1] + ' [' + parts[i - 1] + ']', isActive: false };
-      this.items.push(projectItem);
-    }
-
-    //set the last item as active
-    this.items[this.items.length - 1].isActive = true;
+  // TODO possibly a better idea would be to inject one service that delegates tasks to separate services
+  constructor(private router: Router, private rootService: RootService,
+              private projectService: ProjectService, private epicService: EpicService) {
   }
 
   ngOnInit() {
     this.router.events
       .filter((event: any) => event instanceof NavigationEnd)
-      .subscribe((navEvent: NavigationEnd) => this.parseUrlToBreadcrumbItems(navEvent.url));
+      .subscribe((navEvent: NavigationEnd) => this.setBreadcrumbItems(navEvent.url));
+  }
+
+  private setBreadcrumbItems(url: string) {
+    const urlParts = url.split('/').filter(part => part !== '');
+
+    this.projectItem = this.epicItem = this.storyItem = null;
+    var projectKey, epicKey, storyKey;
+    projectKey = epicKey = storyKey = null;
+
+    if (urlParts.length > 1) {
+      projectKey = urlParts[1];
+      this.rootService.get()
+        .subscribe((projects: ParentCard[]) => this.projectItem = this.convertToProjectItem(this.findCardByKey(projects, projectKey)));
+    }
+
+    if (urlParts.length > 2) {
+      epicKey = urlParts[2];
+      this.projectService.get(epicKey)
+        .subscribe((epics: ParentCard[]) => this.epicItem = this.convertToIssueItem(this.findCardByKey(epics, epicKey), projectKey));
+    }
+
+    if (urlParts.length > 3) {
+      storyKey = urlParts[3];
+      this.epicService.get(projectKey, epicKey)
+        .subscribe((stories: ParentCard[]) => this.storyItem = this.convertToIssueItem(this.findCardByKey(stories, storyKey), projectKey, epicKey));
+    }
+  }
+
+  private convertToProjectItem(card: ParentCard): ProjectBreadcrumbItem {
+    if (card) {
+      const url = '/project/' + card.key;
+      const key = 'Project [' + card.key + ']';
+      const name = card.name;
+      return { url, key, name };
+    }
+    else
+      return null;
+  }
+
+  private convertToIssueItem(card: ParentCard, ...keys: string[]): IssueBreadcrumbItem {
+    if (card) {
+      const url = '/project/' + [...keys, card.key].join('/');
+      const key = this.capitalize(card.type) + ' [' + card.key + ']';
+      const name = card.name;
+      const priorityImgUrl = card.priorityImgUrl;
+      return { url, key, name, priorityImgUrl };
+    }
+    else
+      return null;
+  }
+
+  //TODO maybe there's something similar to 'find' method from ES6 in Typescript already?
+  private findCardByKey(cards: ParentCard[], key: string): ParentCard {
+    const filtered = cards.filter(card => card.key === key);
+    if (filtered.length === 1) // basically, it should always be true
+      return filtered[0];
+    else
+      return null;
+  }
+
+  // it doesn't really belong here but it probably won't be needed anywhere else
+  private capitalize(str: string) {
+    if (str && str.length > 0)
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    else
+      return str;
   }
 }
 

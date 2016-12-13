@@ -1,7 +1,6 @@
-<ol class="aui-nav aui-nav-breadcrumbs __skate">
-  <!-- ugly, but AFAIK *ngIf and *ngFor can't be used on the same element -->
-  <li *ngFor="let item of items" [class.aui-nav-selected]="item.isActive">
-    <a *ngIf="!item.isActive" [routerLink]="[item.url]">{{item.name}}</a>
-    <span *ngIf="item.isActive">{{item.name}}</span>
-  </li>
-</ol>
+<div>
+  <span *ngIf="rootItem">{{rootItem.key}} | </span>
+  <span *ngIf="projectItem">{{projectItem.name}} | </span>
+  <span *ngIf="epicItem">{{epicItem.name}} | </span>
+  <span *ngIf="storyItem">{{storyItem.name}} |</span>
+</div>
