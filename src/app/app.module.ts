@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -27,13 +28,16 @@ import {ParentCardComponent} from "./card/parent-card/parent-card.component";
 import {EpicComponent} from "./cardsView/epic/epic.component";
 import {StoryComponent} from "./cardsView/story/story.component";
 import {Ng2PaginationModule} from 'ng2-pagination';
+import {SessionService} from "./session.service";
+
 
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
-  AppAuthenticationService
+  AppAuthenticationService,
+  SessionService
 ];
 
 type StoreType = {

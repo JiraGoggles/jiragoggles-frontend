@@ -6,7 +6,7 @@ interface Dictionary<T> {
 }
 
 export interface ParentCard extends Card {
-  subCards: ChildCard[];
+  subCards?: ChildCard[];
 
   status?: string; // 'TO DO' / 'IN PROGRESS' / 'DONE'
   avatarUrls?: Dictionary<string>;
