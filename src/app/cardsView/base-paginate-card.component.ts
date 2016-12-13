@@ -24,11 +24,11 @@ export abstract class BasePaginateCardComponent {
     this.loading = true;
     this.cards = source
       .do(res => {
-        this.total = res.count;
+        this.total = (<PaginateResponse<ParentCard>>res).count;
         this.loading = false;
         this.p = page;
       })
-      .map(res => res.cards);
+      .map(res => (<PaginateResponse<ParentCard>>res).cards);
   }
 
 }
