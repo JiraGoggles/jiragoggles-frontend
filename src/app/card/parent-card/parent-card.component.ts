@@ -28,7 +28,7 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
   ngOnInit(): void {
     super.ngOnInit();
     this.JiraUrl = this.jiraUrl;
-    if(this.model.type == 'project')
+    if(this.model.type.toLowerCase() == 'project')
       this.path = 'project/' + this.model.key;
     else
       this.path = this.model.key;
