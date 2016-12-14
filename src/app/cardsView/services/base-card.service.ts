@@ -12,10 +12,9 @@ export abstract class BaseCardService {
   constructor(protected http: Http, protected pluginAuth: AppAuthenticationService) {}
 
   protected _get<T>(path: string, params?: URLSearchParams): Observable<T> {
-   let req = new RequestOptions({search: new URLSearchParams(
-     this.pluginAuth.RequestOptionsWithPluginAuthentication.search.rawParams)});
-   if(params != null)
-     req.search.appendAll(params);
+   let req = new RequestOptions({search: params == null ? new URLSearchParams : params});
+   req.search.appendAll(this.pluginAuth.RequestOptionsWithPluginAuthentication.search);
+
    return this.http
      .get(path, req)
      .map(res => res.json());
