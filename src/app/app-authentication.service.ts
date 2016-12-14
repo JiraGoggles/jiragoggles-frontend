@@ -13,7 +13,7 @@ export class AppAuthenticationService {
 
   constructor() {
     let tokenElement = document.getElementsByName('token');
-    if(tokenElement != null)
+    if(tokenElement != null && tokenElement[0] != null)
       localStorage.setItem(this.pluginAuthenticationKey, tokenElement[0]['content'])
   }
 
