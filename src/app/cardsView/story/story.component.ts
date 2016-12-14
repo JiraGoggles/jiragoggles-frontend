@@ -22,7 +22,7 @@ export class StoryComponent extends BasePaginateCardComponent {
     let keys: string[] =[];
 
     this.route.params
-      .map(params => [params['projectKey'], params['epicKey'], params['storyKeys']])
+      .map(params => [params['projectKey'], params['epicKey'], params['storyKey']])
       .subscribe(ks => keys = ks);
 
     // TODO Wait for this.key assignment in this.service.getPage

@@ -6,8 +6,8 @@
     <div>
       <h3 class="panel-title">
         <strong>
-          <a *ngIf="model.type != 'sub-task'" [routerLink]="path" class="navbar-link" style="color: white">[{{model.key}}]</a>
-          <a *ngIf="model.type == 'sub-task'" href="{{JiraUrl}}" class="navbar-link" style="color: white">[{{model.key}}]</a>
+          <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="path" class="navbar-link" style="color: white">[{{model.key}}]</a>
+          <a *ngIf="model.type.toLowerCase() == 'sub-task'" href="{{JiraUrl}}" class="navbar-link" style="color: white">[{{model.key}}]</a>
         </strong>
       </h3>
     </div>
