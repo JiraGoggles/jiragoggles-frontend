@@ -30,22 +30,28 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
     this.JiraUrl = this.jiraUrl;
     if(this.model.type.toLowerCase() == 'project')
       this.path = 'project/' + this.model.key;
-    else
+    else {
       this.path = this.model.key;
-
-    switch (this.model.status) {
-      case "TO DO":
-        this.status = StatusType.TO_DO;
-        break;
-      case "IN PROGRESS":
-        this.status = StatusType.IN_PROGRESS;
-        break;
-      case "DONE":
-        this.status = StatusType.DONE;
-        break;
-      default:
+      if (this.model.status != null) {
+        switch (this.model.status.toUpperCase()) {
+          case "TO DO":
+            this.status = StatusType.TO_DO;
+            break;
+          case "IN PROGRESS":
+            this.status = StatusType.IN_PROGRESS;
+            break;
+          case "DONE":
+            this.status = StatusType.DONE;
+            break;
+          default:
+            this.status = StatusType.OTHER;
+            break;
+        }
+      }
+      else {
         this.status = StatusType.OTHER;
-        break;
+      }
+
     }
   }
 }
