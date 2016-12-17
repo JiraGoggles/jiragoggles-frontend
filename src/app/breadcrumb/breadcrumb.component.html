@@ -1,6 +1,6 @@
-<div>
-  <span *ngIf="rootItem">{{rootItem.key}} | </span>
-  <span *ngIf="projectItem">{{projectItem.name}} | </span>
-  <span *ngIf="epicItem">{{epicItem.name}} | </span>
-  <span *ngIf="storyItem">{{storyItem.name}} |</span>
+<div class="breadcrumb-container">
+  <breadcrumb-item [model]="rootItem"></breadcrumb-item>
+  <breadcrumb-item *ngIf="projectItem" [model]="projectItem"></breadcrumb-item>
+  <breadcrumb-item *ngIf="epicItem" [model]="epicItem"></breadcrumb-item>
+  <breadcrumb-item *ngIf="storyItem" [model]="storyItem"></breadcrumb-item>
 </div>

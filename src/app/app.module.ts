@@ -28,6 +28,7 @@ import {ParentCardComponent} from "./card/parent-card/parent-card.component";
 import {EpicComponent} from "./cardsView/epic/epic.component";
 import {StoryComponent} from "./cardsView/story/story.component";
 import {SessionService} from "./session.service";
+import {BreadcrumbItemComponent} from "./breadcrumb/breadcrumb-item/breadcrumb-item.component";
 
 
 // Application wide providers
@@ -58,6 +59,7 @@ type StoreType = {
     ChildCardComponent,
     ParentCardComponent,
     BreadcrumbComponent,
+    BreadcrumbItemComponent,
     NoContentComponent,
     ReadMoreComponent
   ],

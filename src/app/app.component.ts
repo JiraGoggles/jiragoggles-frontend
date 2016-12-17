@@ -18,9 +18,7 @@ import {SessionService} from "./session.service";
   template: `
     <main class="col-md-12 center-block">
       <div class="row page-header">
-        <div class="col-md-6">
-          <breadcrumb></breadcrumb>
-        </div>
+        <breadcrumb></breadcrumb>
       </div>
       <router-outlet></router-outlet>
     </main>

@@ -9,12 +9,12 @@ import {EpicService} from "../cardsView/services/epic/epic.service";
 
 @Component({
   selector: 'breadcrumb',
-  templateUrl: 'breadcrumb.component.html'
+  templateUrl: 'breadcrumb.component.html',
+  styleUrls: [ './breadcrumb.component.scss' ]
 })
-
 export class BreadcrumbComponent implements OnInit {
 
-  private rootItem: BreadcrumbItem = { url: '/', key: 'Root' }; // always available
+  private rootItem: BreadcrumbItem = { url: '/', key: 'Root', isActive: true }; // always available
   private projectItem: ProjectBreadcrumbItem = null;
   private epicItem: IssueBreadcrumbItem = null;
   private storyItem: IssueBreadcrumbItem = null;
@@ -37,43 +37,54 @@ export class BreadcrumbComponent implements OnInit {
     var projectKey, epicKey, storyKey;
     projectKey = epicKey = storyKey = null;
 
+    this.rootItem.isActive = urlParts.length === 0;
+
     if (urlParts.length > 1) {
       projectKey = urlParts[1];
+      const isProjectItemActive = urlParts.length === 2;
+
       this.rootService.get()
-        .subscribe((projects: ParentCard[]) => this.projectItem = this.convertToProjectItem(this.findCardByKey(projects, projectKey)));
+        .subscribe((projects: ParentCard[]) => this.projectItem =
+          this.convertToProjectItem(this.findCardByKey(projects, projectKey), isProjectItemActive));
     }
 
     if (urlParts.length > 2) {
       epicKey = urlParts[2];
+      const isEpicItemActive = urlParts.length === 3;
+
       this.projectService.get(epicKey)
-        .subscribe((epics: ParentCard[]) => this.epicItem = this.convertToIssueItem(this.findCardByKey(epics, epicKey), projectKey));
+        .subscribe((epics: ParentCard[]) => this.epicItem =
+          this.convertToIssueItem(this.findCardByKey(epics, epicKey), isEpicItemActive, projectKey));
     }
 
     if (urlParts.length > 3) {
       storyKey = urlParts[3];
+      const isStoryItemActive = urlParts.length === 4;
+
       this.epicService.get(projectKey, epicKey)
-        .subscribe((stories: ParentCard[]) => this.storyItem = this.convertToIssueItem(this.findCardByKey(stories, storyKey), projectKey, epicKey));
+        .subscribe((stories: ParentCard[]) => this.storyItem =
+          this.convertToIssueItem(this.findCardByKey(stories, storyKey), isStoryItemActive, projectKey, epicKey));
     }
   }
 
-  private convertToProjectItem(card: ParentCard): ProjectBreadcrumbItem {
+  private convertToProjectItem(card: ParentCard, isActive: boolean): ProjectBreadcrumbItem {
     if (card) {
       const url = '/project/' + card.key;
       const key = 'Project [' + card.key + ']';
       const name = card.name;
-      return { url, key, name };
+      return { url, key, name, isActive };
     }
     else
       return null;
   }
 
-  private convertToIssueItem(card: ParentCard, ...keys: string[]): IssueBreadcrumbItem {
+  private convertToIssueItem(card: ParentCard, isActive: boolean, ...keys: string[]): IssueBreadcrumbItem {
     if (card) {
       const url = '/project/' + [...keys, card.key].join('/');
       const key = this.capitalize(card.type) + ' [' + card.key + ']';
       const name = card.name;
       const priorityImgUrl = card.priorityImgUrl;
-      return { url, key, name, priorityImgUrl };
+      return { url, key, name, priorityImgUrl, isActive };
     }
     else
       return null;

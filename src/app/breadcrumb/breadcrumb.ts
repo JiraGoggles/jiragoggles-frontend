@@ -1,6 +1,7 @@
 export interface BreadcrumbItem {
   url: string;
   key: string;
+  isActive: boolean;
 }
 
 export interface ProjectBreadcrumbItem extends BreadcrumbItem {
