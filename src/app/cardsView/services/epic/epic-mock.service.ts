@@ -6,16 +6,15 @@ import {Http} from "@angular/http";
 import {ProjectService} from "./project.service";
 import {ParentCard} from "../../../card/card";
 import {Observable} from "rxjs";
+import {BaseCardMockService} from "../base-card-mock.service";
 
 @Injectable()
-export class EpicMockService {
-
-  constructor(private http: Http) {
+export class EpicMockService extends BaseCardMockService{
+  constructor(http: Http) {
+    super(http);
   }
 
-  get(projectKey: string, key: string): Observable<ParentCard[]> {
-    return this.http
-      .get('/assets/mocks/epic.json')
-      .map(res => res.json());
+  protected get path(): string {
+    return '/assets/mocks/epic.json';
   }
 }

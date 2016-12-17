@@ -9,24 +9,17 @@ import {URLSearchParams, RequestOptions} from "@angular/http";
 
 @Injectable()
 export class AppAuthenticationService {
-  // private readonly pluginAuthenticationKey: string = 'token';
-  private _options: RequestOptions;
+  private readonly pluginAuthenticationKey: string = 'token';
 
   constructor() {
-    let searchParams = new URLSearchParams();
     let tokenElement = document.getElementsByName('token');
-
-    searchParams.append('jwt',
-      tokenElement !== null && tokenElement.length > 0 ? tokenElement[0]['content'] : 'empty-token');
-    this._options = new RequestOptions({
-      search: searchParams
-    });
-
-    // sessionStorage.setItem(this.pluginAuthenticationKey, JSON.stringify(this.options));
+    if(tokenElement != null && tokenElement[0] != null)
+      localStorage.setItem(this.pluginAuthenticationKey, tokenElement[0]['content'])
   }
 
   public get RequestOptionsWithPluginAuthentication(): RequestOptions {
-    // return <RequestOptions>JSON.parse(sessionStorage.getItem(this.pluginAuthenticationKey));
-    return this._options;
+    let req = new RequestOptions({search: new URLSearchParams()});
+    req.search.append('jwt', localStorage.getItem(this.pluginAuthenticationKey));
+    return req;
   }
 }

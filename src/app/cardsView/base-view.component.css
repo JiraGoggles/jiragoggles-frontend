@@ -9,3 +9,19 @@
     float: none;
   }
 }
+
+.well-scroll {
+  height: 73vh;
+  white-space: nowrap;
+  overflow-y: scroll;
+}
+
+.pagination-container {
+  position: fixed;
+  top: 3%;
+  right: 5%
+}
+
+.spinner-sm {
+  width: 5%;
+}

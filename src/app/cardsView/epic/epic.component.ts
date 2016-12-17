@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ParentCard} from "../../card/card";
 import {EpicService} from "../services/epic/epic.service";
+import {BasePaginateCardComponent} from "../base-paginate-card.component";
 
 
 @Component({
@@ -12,21 +13,21 @@ import {EpicService} from "../services/epic/epic.service";
   templateUrl: '../base-view.component.html',
   styleUrls: [ '../base-view.component.css' ]
 })
-export class EpicComponent {
-  private cards: ParentCard[];
+export class EpicComponent extends BasePaginateCardComponent {
   private key: number;
 
   constructor(private route: ActivatedRoute, private service: EpicService) {
+    super();
   }
 
-  ngOnInit() {
+  getPage(page: number) {
+    let keys: string[] =[];
+
     this.route.params
       .map(params => [params['projectKey'], params['epicKey']])
-      .subscribe(keys => {
-        this.key = keys[1];
-        this.service
-          .get(keys[0], keys[1])
-          .subscribe(cards => this.cards = cards);
-      });
+      .subscribe(ks => keys = ks);
+
+    // TODO Wait for this.key assignment in this.service.getPage
+    this._getPage(page, this.service.getPage(page, this.perPage, keys[0], keys[1]));
   }
 }

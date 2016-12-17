@@ -2,23 +2,22 @@
  * Created by wiekonek on 09.11.16.
  */
 import {Component} from '@angular/core';
-import {ParentCard} from "../../card/card";
 import {RootService} from "../services/root/root.service";
+import {BasePaginateCardComponent} from "../base-paginate-card.component";
+
 
 @Component({
   selector: 'test',
   templateUrl: '../base-view.component.html',
-  styleUrls: [ '../base-view.component.css' ],
+  styleUrls: [ '../base-view.component.css' ]
 })
-
-export class RootComponent {
-  private cards:ParentCard[] = [];
-
-  constructor(private projectsService: RootService) {
+export class RootComponent extends BasePaginateCardComponent {
+  constructor(private rootService: RootService) {
+    super();
   }
 
-  ngOnInit() {
-    this.projectsService.get()
-      .subscribe(resp => this.cards = resp);
+  getPage(page: number) {
+    this._getPage(page, this.rootService.getPage(page, 4));
   }
+
 }

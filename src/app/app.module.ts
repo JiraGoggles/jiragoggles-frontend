@@ -27,8 +27,10 @@ import {ChildCardComponent} from "./card/child-card/child-card.component";
 import {ParentCardComponent} from "./card/parent-card/parent-card.component";
 import {EpicComponent} from "./cardsView/epic/epic.component";
 import {StoryComponent} from "./cardsView/story/story.component";
+import {Ng2PaginationModule} from 'ng2-pagination';
 import {SessionService} from "./session.service";
 import {BreadcrumbItemComponent} from "./breadcrumb/breadcrumb-item/breadcrumb-item.component";
+
 
 
 // Application wide providers
@@ -66,6 +68,7 @@ type StoreType = {
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
+    Ng2PaginationModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],

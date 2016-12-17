@@ -1,12 +1,19 @@
-<div class="container-fluid container-scroll">
-  <div class="row">
-    <div *ngFor="let card of cards" class="col-md-3">
-      <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
-      <div class="well well-sm" style="height: 73vh; white-space: nowrap; overflow-y: scroll;" *ngIf="card.subCards" >
-        <div *ngFor="let subCard of card.subCards">
-          <child-card [model]="subCard" [type]="subCard.type"></child-card>
-        </div>
+<div [ngClass]="{ 'hidden': !loading }" class="center-block col-12">
+  <img src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" class="center-block spinner-sm"/>
+</div>
+<div class="pagination-container">
+  <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+</div>
+
+<div class="row" [ngClass]="{ 'hidden': loading }">
+  <div class="col-lg-3" *ngFor="let card of cards | async | paginate: { id: 'server', itemsPerPage: perPage, currentPage: p, totalItems: total }">
+    <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
+    <div class="well well-sm well-scroll" *ngIf="card.subCards">
+      <div *ngFor="let subCard of card.subCards">
+        <child-card [model]="subCard" [type]="subCard.type"></child-card>
       </div>
     </div>
   </div>
 </div>
+
+

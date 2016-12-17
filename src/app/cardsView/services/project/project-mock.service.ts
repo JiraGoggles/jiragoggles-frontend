@@ -3,19 +3,19 @@
  */
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {ProjectService} from "./project.service";
-import {ParentCard} from "../../../card/card";
-import {Observable} from "rxjs";
+import {BaseCardMockService} from "../base-card-mock.service";
 
 @Injectable()
-export class ProjectMockService {
-
-  constructor(private http: Http) {
+export class ProjectMockService extends BaseCardMockService {
+  constructor(http: Http) {
+    super(http);
   }
 
-  get(key: string): Observable<ParentCard[]> {
-    return this.http
-      .get('/assets/mocks/project.json')
-      .map(res => res.json());
+  protected get total() {
+    return 4;
+  }
+
+  protected get path(): string {
+    return '/assets/mocks/project.json';
   }
 }
