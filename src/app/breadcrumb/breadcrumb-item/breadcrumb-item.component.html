@@ -1,0 +1,22 @@
+<div class="breadcrumb-wrapper">
+  <div class="breadcrumb-item panel panel-info">
+    <div class="panel-heading">
+      <h5 class="panel-title">
+        <a [routerLink]="[model.url]">{{model.key}}</a>
+      </h5>
+    </div>
+    <div class="panel-body">
+      <div *ngIf="model.name">
+        <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" />
+        <div class="content">
+          <read-more [maxLength]="20" [text]="model.name"></read-more>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!model.isActive" class="breadcrumb-separator">
+    <div class="symbol">
+      &#8250;
+    </div>
+  </div>
+</div>

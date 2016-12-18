@@ -29,6 +29,7 @@ import {EpicComponent} from "./cardsView/epic/epic.component";
 import {StoryComponent} from "./cardsView/story/story.component";
 import {Ng2PaginationModule} from 'ng2-pagination';
 import {SessionService} from "./session.service";
+import {BreadcrumbItemComponent} from "./breadcrumb/breadcrumb-item/breadcrumb-item.component";
 
 
 
@@ -60,6 +61,7 @@ type StoreType = {
     ChildCardComponent,
     ParentCardComponent,
     BreadcrumbComponent,
+    BreadcrumbItemComponent,
     NoContentComponent,
     ReadMoreComponent
   ],
