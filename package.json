@@ -12,6 +12,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run server:prod",
+    "heroku-prebuild": "./heroku-prebuild.sh",
     "postinstall": "npm run build:prod",
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
