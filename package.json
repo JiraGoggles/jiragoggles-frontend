@@ -11,7 +11,8 @@
   "homepage": "https://github.com/angularclass/angular2-webpack-starter",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build:prod && npm run server:prod",
+    "start": "npm run server:prod",
+    "postinstall": "npm run build:prod",
     "heroku-prebuild": "bash ./heroku-prebuild.sh",
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
@@ -127,7 +128,7 @@
     "tslint": "^4.0.0-dev.0",
     "tslint-loader": "^2.1.3",
     "typedoc": "^0.5.0",
-    "typescript": "^2.0.6",
+    "typescript": "2.0.6",
     "url-loader": "^0.5.7",
     "webpack": "2.1.0-beta.25",
     "webpack-dev-middleware": "1.6.1",

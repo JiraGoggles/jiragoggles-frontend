@@ -4,4 +4,4 @@ npm install -g webpack
 npm install -g webpack-dev-server
 npm install -g karma-cli
 npm install -g protractor
-npm install -g typescript
+npm install -g typescript@2.0.6
