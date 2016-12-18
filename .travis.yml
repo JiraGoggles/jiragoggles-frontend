@@ -38,4 +38,4 @@ deploy:
   on:
     repo: JiraGoggles/jiragoggles-frontend
     branch: reverse-proxy-test
-  buildpack: nodejs
+  buildpack: https://github.com/heroku/heroku-buildpack-nodejs#yarn

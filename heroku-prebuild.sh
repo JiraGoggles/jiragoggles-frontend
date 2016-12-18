@@ -1,5 +1,4 @@
 npm i -g npm@^3
-npm install -g yargs
 npm install -g webpack
 npm install -g webpack-dev-server
 npm install -g karma-cli
