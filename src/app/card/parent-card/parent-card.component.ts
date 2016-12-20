@@ -14,7 +14,8 @@ enum StatusType {
 
 @Component({
   selector: 'parent-card',
-  templateUrl: './parent-card.component.html'
+  templateUrl: './parent-card.component.html',
+  styleUrls: [ '../card.component.scss' ]
 })
 
 export class ParentCardComponent extends ChildCardComponent implements OnInit {
@@ -24,6 +25,7 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
   private statusType = StatusType;
   private status: StatusType;
   private JiraUrl: string;
+  private isOfProjectType: boolean; // for convenience sake (in templateUrl file)
 
   ngOnInit(): void {
     super.ngOnInit();
@@ -51,7 +53,7 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
       else {
         this.status = StatusType.OTHER;
       }
-
     }
+    this.isOfProjectType = this.model.type.toLowerCase() === 'project';
   }
 }

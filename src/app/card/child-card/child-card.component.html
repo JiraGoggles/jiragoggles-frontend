@@ -1,28 +1,16 @@
-
-<!--<div class="panel panel-default">-->
-<div class="panel panel-default" >
+<div class="card child-card panel panel-default" >
     <div class="panel-heading" >
-      <!--<a role="button" data-toggle="collapse" data-target="{{model.key}}" href="#{{model.key}}" aria-expanded="true"-->
-         <!--style="text-decoration:none;">-->
-        <div>
-          <h3 class="panel-title">
-            <strong>
-              <a href="{{jiraUrl}}" class="navbar-link">[{{model.key}}]</a>
-            </strong>
-          </h3>
-        </div>
-      <!--</a>-->
+      <div class="panel-title">
+        <a href="{{jiraUrl}}" class="navbar-link">[{{model.key}}]</a>
+      </div>
     </div>
-  <div class="panel-body collapse in" id="{{model.key}}">
-    <div class="col-xs-2" style="padding: 0px 15px 0px 0px; max-width: 40px">
-      <img src="{{model.typeImgUrl}}" class="img-responsive"/>
-      <img src="{{model.priorityImgUrl}}" class="img-responsive"/>
+  <div class="panel-body" id="{{model.key}}">
+    <div class="others-img">
+      <img *ngIf="model.typeImgUrl" src="{{model.typeImgUrl}}"/>
+      <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}"/>
     </div>
-    <div class="col-xs-10">
-      <span style="white-space: normal">
-          <read-more [text]="model.name">
-          </read-more>
-      </span>
+    <div class="others-text">
+      <read-more [maxLength]="50" [text]="model.name"></read-more>
     </div>
   </div>
 </div>
