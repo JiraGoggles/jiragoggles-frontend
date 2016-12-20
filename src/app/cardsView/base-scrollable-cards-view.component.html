@@ -2,15 +2,16 @@
   <img src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif" class="center-block spinner-sm"/>
 </div>
 
-<div class="container-scrollable" [ngClass]="{ 'hidden': loading }">
-  <div class="card-column" *ngFor="let card of cards | async">
+<perfect-scrollbar (ps-x-reach-end)="scrolledToEnd($event)" [config]="containerScrollbarConfig"
+                   class="container-scrollable" [ngClass]="{ 'hidden': loading }">
+  <perfect-scrollbar [config]="columnScrollbarConfig" class="card-column" *ngFor="let card of cards | async">
     <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
     <div *ngIf="card.subCards">
       <div *ngFor="let subCard of card.subCards">
         <child-card [model]="subCard" [type]="subCard.type"></child-card>
       </div>
     </div>
-  </div>
-</div>
+  </perfect-scrollbar>
+</perfect-scrollbar>
 
 

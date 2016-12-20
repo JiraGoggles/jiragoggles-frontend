@@ -30,7 +30,8 @@ import {StoryComponent} from "./cardsView/story/story.component";
 import {Ng2PaginationModule} from 'ng2-pagination';
 import {SessionService} from "./session.service";
 import {BreadcrumbItemComponent} from "./breadcrumb/breadcrumb-item/breadcrumb-item.component";
-
+import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
 
 
 // Application wide providers
@@ -45,6 +46,9 @@ type StoreType = {
   state: InternalStateType,
   restoreInputValues: () => void,
   disposeOldHosts: () => void
+};
+
+const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 /**
@@ -70,7 +74,8 @@ type StoreType = {
     FormsModule,
     Ng2PaginationModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

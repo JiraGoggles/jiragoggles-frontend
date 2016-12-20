@@ -1,19 +1,19 @@
 $cardColumnWidth: 250px;
-$cardColumnHeight: 600px;
+$cardColumnHeight: 400px;
 
 .container-scrollable {
+  position: relative;
   width: 100%;
   white-space: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .card-column {
   width: $cardColumnWidth;
   height: $cardColumnHeight;
-  display: inline-block;
+  display: inline-block !important;
   white-space: normal;
-  overflow-y: auto;
+  overflow: hidden;
   padding-top: 10px;
   margin-left: 5px;
   margin-right: 5px;

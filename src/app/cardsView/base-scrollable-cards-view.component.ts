@@ -14,6 +14,9 @@ export abstract class BaseScrollableCardsViewComponent {
   total: number;
   loading: boolean;
 
+  containerScrollbarConfig = { suppressScrollY: true };
+  columnScrollbarConfig = { suppressScrollX: true };
+
   public abstract loadNextBatch() : void;
 
   public ngOnInit() {
@@ -30,4 +33,8 @@ export abstract class BaseScrollableCardsViewComponent {
       .map(res => (<PaginateResponse<ParentCard>>res).cards);
   }
 
+  protected scrolledToEnd(event: any): void {
+    // TODO could not find any other way to determine whether the event comes from the horizontal (container, not column) scrollbar
+    const isContainerScrollbarEvent = event.srcElement.className.indexOf('ps-active-x') !== -1;
+  }
 }
