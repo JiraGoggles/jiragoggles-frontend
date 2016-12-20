@@ -6,27 +6,26 @@ import {Observable} from "rxjs";
 import {PaginateResponse} from "./services/paginate-response";
 
 
-export abstract class BasePaginateCardComponent {
-  perPage: number = 4;
+export abstract class BaseScrollableCardsViewComponent {
+  readonly perBatch: number = 10;
 
   cards: Observable<ParentCard[]>;
-  p: number = 1;
+  currentBatch: number = 1;
   total: number;
   loading: boolean;
 
-  public abstract getPage(page: number) : void;
+  public abstract loadNextBatch() : void;
 
   public ngOnInit() {
-    this.getPage(1);
+    this.loadNextBatch();
   }
 
-  protected _getPage(page: number, source: Observable<PaginateResponse<ParentCard>>): void {
+  protected _loadNextBatch(source: Observable<PaginateResponse<ParentCard>>): void {
     this.loading = true;
     this.cards = source
       .do(res => {
         this.total = (<PaginateResponse<ParentCard>>res).total;
         this.loading = false;
-        this.p = page;
       })
       .map(res => (<PaginateResponse<ParentCard>>res).cards);
   }

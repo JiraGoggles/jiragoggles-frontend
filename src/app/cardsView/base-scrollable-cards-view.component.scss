@@ -1,0 +1,21 @@
+$cardColumnWidth: 250px;
+$cardColumnHeight: 600px;
+
+.container-scrollable {
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.card-column {
+  width: $cardColumnWidth;
+  height: $cardColumnHeight;
+  display: inline-block;
+  white-space: normal;
+  overflow-y: auto;
+  padding-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #F0F0F0;
+}
