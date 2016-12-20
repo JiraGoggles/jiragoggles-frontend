@@ -34,26 +34,27 @@ export abstract class BasePaginateCardComponent {
   onRankChangeRequest(args: string[]) {
     let callerId: string = args[0];
     let direction: string = args[1];
-    let neighbor: Element;
-    let caller: Element = document.getElementById(callerId);
-    let parent: Element;
+    let caller = document.getElementById(callerId);
+    let parent = document.getElementById('main-row');
 
     if (direction == 'left') {
-      neighbor = document.getElementById(callerId).previousElementSibling;
+      this.rankUp(caller, parent);
     } else if (direction == 'right') {  //there might be other directions added like max-left and max-right
-      neighbor = document.getElementById(callerId).nextElementSibling;
-    }
-    if (neighbor !== null) {
-      parent = document.getElementById('main-row');
-      if (direction == 'left'){
-        parent.insertBefore(caller, neighbor);
-      } else if (direction == 'right') {
-        parent.insertBefore(neighbor, caller);
-      }
+      this.rankDown(caller, parent);
     }
   }
 
-  public onParentDrop($event) : void {
-    console.log($event);
+  private rankUp(caller: Element, parent: Element) {
+    let neighbor = caller.previousElementSibling;
+    if (neighbor !== null) {
+      parent.insertBefore(caller, neighbor);
+    }
+  }
+
+  private rankDown(caller: Element, parent: Element) {
+    let neighbor = caller.nextElementSibling;
+    if (neighbor !== null) {
+      parent.insertBefore(neighbor, caller);
+    }
   }
 }
