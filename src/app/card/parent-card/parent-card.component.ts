@@ -1,7 +1,7 @@
 /**
  * Created by wiekonek on 11.12.16.
  */
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 import {ParentCard} from "../card";
 import {ChildCardComponent} from "../child-card/child-card.component";
 
@@ -14,16 +14,23 @@ enum StatusType {
 
 @Component({
   selector: 'parent-card',
-  templateUrl: './parent-card.component.html'
+  templateUrl: './parent-card.component.html',
+  styleUrls: ['parent-card.component.css']
 })
 
 export class ParentCardComponent extends ChildCardComponent implements OnInit {
   @Input() model: ParentCard;
   @Input() type: string;
+  @Output() onRankChangeRequest = new EventEmitter<string[]>();
   private path: string;
   private statusType = StatusType;
   private status: StatusType;
   private JiraUrl: string;
+
+  public onRankClick(id: string, direction: string){
+    let args: string[] = [id, direction];
+    this.onRankChangeRequest.emit(args);
+  }
 
   ngOnInit(): void {
     super.ngOnInit();

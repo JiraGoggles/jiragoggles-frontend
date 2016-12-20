@@ -31,4 +31,29 @@ export abstract class BasePaginateCardComponent {
       .map(res => (<PaginateResponse<ParentCard>>res).cards);
   }
 
+  onRankChangeRequest(args: string[]) {
+    let callerId: string = args[0];
+    let direction: string = args[1];
+    let neighbor: Element;
+    let caller: Element = document.getElementById(callerId);
+    let parent: Element;
+
+    if (direction == 'left') {
+      neighbor = document.getElementById(callerId).previousElementSibling;
+    } else if (direction == 'right') {  //there might be other directions added like max-left and max-right
+      neighbor = document.getElementById(callerId).nextElementSibling;
+    }
+    if (neighbor !== null) {
+      parent = document.getElementById('main-row');
+      if (direction == 'left'){
+        parent.insertBefore(caller, neighbor);
+      } else if (direction == 'right') {
+        parent.insertBefore(neighbor, caller);
+      }
+    }
+  }
+
+  public onParentDrop($event) : void {
+    console.log($event);
+  }
 }

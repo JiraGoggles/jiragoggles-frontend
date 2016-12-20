@@ -5,11 +5,11 @@
   <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
 </div>
 
-<div class="row" [ngClass]="{ 'hidden': loading }">
-  <div class="col-lg-3" *ngFor="let card of cards | async | paginate: { id: 'server', itemsPerPage: perPage, currentPage: p, totalItems: total }">
-    <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
+<div class="row" id="main-row" [ngClass]="{ 'hidden': loading }">
+  <div id="{{card.key}}" class="col-lg-3" *ngFor="let card of cards | async | paginate: { id: 'server', itemsPerPage: perPage, currentPage: p, totalItems: total };">
+    <parent-card [model]="card" [type]="card.type | lowercase" (onRankChangeRequest)="onRankChangeRequest($event)"></parent-card>
     <div class="well well-sm well-scroll" *ngIf="card.subCards">
-      <div *ngFor="let subCard of card.subCards">
+      <div *ngFor="let subCard of card.subCards;">
         <child-card [model]="subCard" [type]="subCard.type"></child-card>
       </div>
     </div>
