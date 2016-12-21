@@ -11,7 +11,7 @@ export abstract class BaseCardService {
 
   constructor(protected http: Http, protected pluginAuth: AppAuthenticationService) {}
 
-  protected _get<T>(path: string, params?: URLSearchParams): Observable<T> {
+  protected _get<T extends Card>(path: string, params?: URLSearchParams): Observable<PaginateResponse<T>> {
    let req = new RequestOptions({search: params == null ? new URLSearchParams : params});
    req.search.appendAll(this.pluginAuth.RequestOptionsWithPluginAuthentication.search);
 

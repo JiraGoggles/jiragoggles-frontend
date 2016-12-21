@@ -1,464 +1,137 @@
-[
-  {
-    "key": "SC-8",
-    "name": "TaskName",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "IN PROGRESS",
-    "subCards": [
-      {
-        "key": "SC-80",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-81",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-82",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-83",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-84",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-85",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-9",
-    "name": "Important task!",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-90",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-91",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-92",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-93",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-94",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-95",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-10",
-    "name": "Last random task",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "DONE",
-    "subCards": [
-      {
-        "key": "SC-101",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-102",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-103",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-104",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-105",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-106",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-11",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-110",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-111",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-112",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-12",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-120",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-121",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-122",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-13",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-130",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-131",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-132",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-14",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-140",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-141",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-142",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-15",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-150",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-151",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-152",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-16",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-160",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-161",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-162",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-17",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-170",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-171",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-172",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-18",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-180",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-181",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-182",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  },
-  {
-    "key": "SC-19",
-    "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
-    "type": "task",
-    "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-    "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
-    "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-    "status": "TO DO",
-    "subCards": [
-      {
-        "key": "SC-190",
-        "name": "Random sub-task",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
-        "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-191",
-        "name": "This is first sub-task in this story.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      },
-      {
-        "key": "SC-192",
-        "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
-        "type": "sub-task",
-        "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-        "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
-      }
-    ]
-  }
-]
+{
+  "total": 4,
+  "cards": [
+    {
+      "key": "SC-8",
+      "name": "TaskName",
+      "type": "task",
+      "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+      "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+      "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+      "status": "IN PROGRESS",
+      "subCards": [
+        {
+          "key": "SC-80",
+          "name": "This is first sub-task in this story.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-81",
+          "name": "Random sub-task",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+          "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-82",
+          "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        }
+      ]
+    },
+    {
+      "key": "SC-9",
+      "name": "Important task!",
+      "type": "task",
+      "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+      "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+      "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+      "status": "TO DO",
+      "subCards": [
+        {
+          "key": "SC-90",
+          "name": "This is first sub-task in this story.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-91",
+          "name": "Random sub-task",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+          "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-92",
+          "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        }
+      ]
+    },
+    {
+      "key": "SC-10",
+      "name": "Last random task",
+      "type": "task",
+      "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+      "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+      "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+      "status": "DONE",
+      "subCards": [
+        {
+          "key": "SC-101",
+          "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-102",
+          "name": "This is first sub-task in this story.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-103",
+          "name": "Random sub-task",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+          "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        }
+      ]
+    },
+    {
+      "key": "SC-11",
+      "name": "Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic. Very long task in epic.",
+      "type": "task",
+      "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+      "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
+      "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+      "status": "TO DO",
+      "subCards": [
+        {
+          "key": "SC-110",
+          "name": "Random sub-task",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
+          "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-111",
+          "name": "This is first sub-task in this story.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        },
+        {
+          "key": "SC-112",
+          "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
+          "type": "sub-task",
+          "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
+          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+        }
+      ]
+    }
+  ]
+}

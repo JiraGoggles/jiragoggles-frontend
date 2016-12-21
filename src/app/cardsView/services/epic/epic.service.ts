@@ -15,8 +15,8 @@ export class EpicService extends BaseCardService{
     super(http, pluginAuth);
   }
 
-  get(projectKey: string, key: string): Observable<ParentCard[]> {
-    return this._get<ParentCard[]>('api/card/project/' + projectKey + '/'+ key);
+  get(projectKey: string, key: string): Observable<PaginateResponse<ParentCard>> {
+    return this._get<ParentCard>('api/card/project/' + projectKey + '/'+ key);
   }
 
   getPage(page: number, size: number, projectKey: string, key: string): Observable<PaginateResponse<ParentCard>> {

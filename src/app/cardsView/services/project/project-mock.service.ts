@@ -11,10 +11,6 @@ export class ProjectMockService extends BaseCardMockService {
     super(http);
   }
 
-  protected get total() {
-    return 4;
-  }
-
   protected get path(): string {
     return '/assets/mocks/project.json';
   }
