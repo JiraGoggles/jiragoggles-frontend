@@ -1,14 +1,14 @@
 {
-  "name": "Jira Goggles frontend server",
-  "version": "0.2.0",
-  "description": "Jira Goggles frontend server",
+  "name": "angular2-webpack-starter",
+  "version": "5.1.1",
+  "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
   "keywords": [
     "angular2",
     "webpack",
     "typescript"
   ],
-  "author": "",
-  "homepage": "http://jira-goggles.weebly.com",
+  "author": "Patrick Stapleton <patrick@angularclass.com>",
+  "homepage": "https://github.com/angularclass/angular2-webpack-starter",
   "license": "MIT",
   "scripts": {
     "start": "npm run server:prod",
@@ -135,10 +135,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JiraGoggles/jiragoggles-frontend"
+    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
   },
   "bugs": {
-    "url": "https://github.com/JiraGoggles/jiragoggles-frontend/issues"
+    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
   },
   "engines": {
     "node": ">= 4.2.1",
