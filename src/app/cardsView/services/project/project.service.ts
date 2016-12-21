@@ -5,7 +5,6 @@ import {Injectable} from "@angular/core";
 import {Http, RequestOptions, URLSearchParams} from "@angular/http";
 import {ParentCard} from "../../../card/card";
 import {Observable} from "rxjs";
-import {CardsService} from "../cards-service";
 import {AppAuthenticationService} from "../../../app-authentication.service";
 import {BaseCardService} from "../base-card.service";
 import {PaginateResponse} from "../paginate-response";

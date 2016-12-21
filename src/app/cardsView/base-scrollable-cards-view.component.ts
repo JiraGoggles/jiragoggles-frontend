@@ -7,7 +7,7 @@ import {PaginateResponse} from "./services/paginate-response";
 import * as $ from 'jquery';
 
 export abstract class BaseScrollableCardsViewComponent {
-  readonly perBatch: number = 10;
+  readonly perBatch: number = 12;
 
   cards: ParentCard[];
   nextBatchNumber: number = 1;
@@ -33,9 +33,12 @@ export abstract class BaseScrollableCardsViewComponent {
         this.cards = res.cards;
       this.nextBatchNumber++;
 
-      // immediately assigning a new state to the 'loading' variable here would
-      // lead to blinking while loading the batch in the browser
-      setTimeout(() => this.loading = false, 0);
+      this.loading = false;
+
+      // force an update of the horizontal scrollbar
+      // otherwise it gets stuck at its end position after loading a batch
+      const container = document.getElementsByClassName('container-scrollable')[0];
+      container.scrollLeft -= 10;
     });
   }
 
@@ -60,8 +63,8 @@ export abstract class BaseScrollableCardsViewComponent {
       const maxHeightLeft = $(window).height() - headerSize;
 
       // taking into consideration the fact that the add-on will be contained within an iframe etc.
-      // don't go under 400px though
-      const containerHeight = Math.max(maxHeightLeft - 60, 600);
+      // don't go below 400px though
+      const containerHeight = Math.max(maxHeightLeft - 60, 400);
       $('.base-cards-view').height(containerHeight);
       $('.card-column').height(containerHeight);
     });
