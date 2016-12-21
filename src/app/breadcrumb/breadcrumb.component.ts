@@ -19,6 +19,7 @@ export class BreadcrumbComponent implements OnInit {
   private projectItem: ProjectBreadcrumbItem = null;
   private epicItem: IssueBreadcrumbItem = null;
   private storyItem: IssueBreadcrumbItem = null;
+  private currentPath: string = '/';
 
   // TODO possibly a better idea would be to inject one service that delegates tasks to separate services
   constructor(private router: Router, private rootService: RootService,
@@ -32,39 +33,43 @@ export class BreadcrumbComponent implements OnInit {
   }
 
   private setBreadcrumbItems(url: string) {
-    const urlParts = url.split('/').filter(part => part !== '');
+    if (this.currentPath !== url) {
+      this.currentPath = url;
 
-    this.projectItem = this.epicItem = this.storyItem = null;
-    var projectKey, epicKey, storyKey;
-    projectKey = epicKey = storyKey = null;
+      const urlParts = url.split('/').filter(part => part !== '');
 
-    this.rootItem.isActive = urlParts.length === 0;
+      this.projectItem = this.epicItem = this.storyItem = null;
+      var projectKey, epicKey, storyKey;
+      projectKey = epicKey = storyKey = null;
 
-    if (urlParts.length > 1) {
-      projectKey = urlParts[1];
-      const isProjectItemActive = urlParts.length === 2;
+      this.rootItem.isActive = urlParts.length === 0;
 
-      this.rootService.get()
-        .subscribe((projects: PaginateResponse<ParentCard>) => this.projectItem =
-          this.convertToProjectItem(this.findCardByKey(projects, projectKey), isProjectItemActive));
-    }
+      if (urlParts.length > 1) {
+        projectKey = urlParts[1];
+        const isProjectItemActive = urlParts.length === 2;
 
-    if (urlParts.length > 2) {
-      epicKey = urlParts[2];
-      const isEpicItemActive = urlParts.length === 3;
+        this.rootService.get()
+          .subscribe((projects: PaginateResponse<ParentCard>) => this.projectItem =
+            this.convertToProjectItem(this.findCardByKey(projects, projectKey), isProjectItemActive));
+      }
 
-      this.projectService.get(epicKey)
-        .subscribe((epics: PaginateResponse<ParentCard>) => this.epicItem =
-          this.convertToIssueItem(this.findCardByKey(epics, epicKey), isEpicItemActive, projectKey));
-    }
+      if (urlParts.length > 2) {
+        epicKey = urlParts[2];
+        const isEpicItemActive = urlParts.length === 3;
 
-    if (urlParts.length > 3) {
-      storyKey = urlParts[3];
-      const isStoryItemActive = urlParts.length === 4;
+        this.projectService.get(epicKey)
+          .subscribe((epics: PaginateResponse<ParentCard>) => this.epicItem =
+            this.convertToIssueItem(this.findCardByKey(epics, epicKey), isEpicItemActive, projectKey));
+      }
 
-      this.epicService.get(projectKey, epicKey)
-        .subscribe((stories: PaginateResponse<ParentCard>) => this.storyItem =
-          this.convertToIssueItem(this.findCardByKey(stories, storyKey), isStoryItemActive, projectKey, epicKey));
+      if (urlParts.length > 3) {
+        storyKey = urlParts[3];
+        const isStoryItemActive = urlParts.length === 4;
+
+        this.epicService.get(projectKey, epicKey)
+          .subscribe((stories: PaginateResponse<ParentCard>) => this.storyItem =
+            this.convertToIssueItem(this.findCardByKey(stories, storyKey), isStoryItemActive, projectKey, epicKey));
+      }
     }
   }
 
