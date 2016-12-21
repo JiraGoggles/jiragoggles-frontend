@@ -15,8 +15,8 @@ export class StoryService extends BaseCardService {
     super(http, pluginAuth);
   }
 
-  get(projectKey: string, epicKey: string, key: string): Observable<ParentCard[]> {
-    return this._get<ParentCard[]>('api/card/project/' + projectKey + '/' + epicKey + '/' + key);
+  get(projectKey: string, epicKey: string, key: string): Observable<PaginateResponse<ParentCard>> {
+    return this._get<ParentCard>('api/card/project/' + projectKey + '/' + epicKey + '/' + key);
   }
 
   getPage(page: number, size: number, projectKey: string, epicKey: string, key: string): Observable<PaginateResponse<ParentCard>> {

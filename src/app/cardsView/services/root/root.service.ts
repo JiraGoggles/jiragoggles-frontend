@@ -15,8 +15,8 @@ export class RootService extends BaseCardService {
     super(http, pluginAuth);
   }
 
-  get(): Observable<ParentCard[]> {
-    return this._get<ParentCard[]>('api/card/project');
+  get(): Observable<PaginateResponse<ParentCard>> {
+    return this._get<ParentCard>('api/card/project');
   }
 
   getPage(page: number, size: number): Observable<PaginateResponse<ParentCard>> {
