@@ -17,6 +17,6 @@ export class RootComponent extends BaseScrollableCardsViewComponent {
   }
 
   loadNextBatch() {
-    this._loadNextBatch(this.rootService.getPage(this.currentBatch, this.perBatch));
+    this._loadNextBatch(this.rootService.getPage(this.nextBatchNumber, this.perBatch));
   }
 }

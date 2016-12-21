@@ -4,7 +4,7 @@
 
 <perfect-scrollbar (ps-x-reach-end)="scrolledToEnd($event)" [config]="containerScrollbarConfig"
                    class="container-scrollable" [ngClass]="{ 'hidden': loading }">
-  <perfect-scrollbar [config]="columnScrollbarConfig" class="card-column" *ngFor="let card of cards | async">
+  <perfect-scrollbar [config]="columnScrollbarConfig" class="card-column" *ngFor="let card of cards">
     <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
     <div *ngIf="card.subCards">
       <div *ngFor="let subCard of card.subCards">

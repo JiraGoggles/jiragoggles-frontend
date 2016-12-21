@@ -9,10 +9,10 @@ import {PaginateResponse} from "./services/paginate-response";
 export abstract class BaseScrollableCardsViewComponent {
   readonly perBatch: number = 10;
 
-  cards: Observable<ParentCard[]>;
-  currentBatch: number = 1;
+  cards: ParentCard[];
+  nextBatchNumber: number = 1;
   total: number;
-  loading: boolean;
+  loading: boolean = false;
 
   containerScrollbarConfig = { suppressScrollY: true };
   columnScrollbarConfig = { suppressScrollX: true };
@@ -25,16 +25,31 @@ export abstract class BaseScrollableCardsViewComponent {
 
   protected _loadNextBatch(source: Observable<PaginateResponse<ParentCard>>): void {
     this.loading = true;
-    this.cards = source
-      .do(res => {
-        this.total = (<PaginateResponse<ParentCard>>res).total;
-        this.loading = false;
-      })
-      .map(res => (<PaginateResponse<ParentCard>>res).cards);
+    source.subscribe((res: PaginateResponse<ParentCard>) => {
+      this.total = res.total;
+      if (this.cards)
+        this.cards.push(...res.cards);
+      else
+        this.cards = res.cards;
+      this.nextBatchNumber++;
+
+      // immediately assigning a new state to the 'loading' variable here would
+      // lead to blinking while loading the batch in the browser
+      setTimeout(() => this.loading = false, 0);
+    });
   }
 
   protected scrolledToEnd(event: any): void {
-    // TODO could not find any other way to determine whether the event comes from the horizontal (container, not column) scrollbar
-    const isContainerScrollbarEvent = event.srcElement.className.indexOf('ps-active-x') !== -1;
+    // TODO couldn't find any better way to determine whether the event comes from the horizontal scrollbar
+    const isContainerScrollbarEvent = event.target.className.indexOf('ps-active-x') !== -1;
+
+    if (isContainerScrollbarEvent && !this.loading) {
+      // now, when we're sure the cards aren't loading, we can count them
+      const loadedSoFar = (this.nextBatchNumber - 1) * this.perBatch;
+      if (loadedSoFar < this.total) {
+        this.loading = true;
+        this.loadNextBatch();
+      }
+    }
   }
 }

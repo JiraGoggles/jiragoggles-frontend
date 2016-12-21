@@ -26,6 +26,6 @@ export class StoryComponent extends BaseScrollableCardsViewComponent {
       .subscribe(ks => keys = ks);
 
     // TODO Wait for this.key assignment in this.service.loadNextBatch
-    this._loadNextBatch(this.service.getPage(this.currentBatch, this.perBatch, keys[0], keys[1], keys[2]));
+    this._loadNextBatch(this.service.getPage(this.nextBatchNumber, this.perBatch, keys[0], keys[1], keys[2]));
   }
 }
