@@ -4,7 +4,7 @@
 import {ParentCard} from "../card/card";
 import {Observable} from "rxjs";
 import {PaginateResponse} from "./services/paginate-response";
-
+import * as $ from 'jquery';
 
 export abstract class BaseScrollableCardsViewComponent {
   readonly perBatch: number = 10;
@@ -51,5 +51,19 @@ export abstract class BaseScrollableCardsViewComponent {
         this.loadNextBatch();
       }
     }
+  }
+
+  //TODO not sure if it belongs in here or in some more general component
+  public ngAfterViewInit() {
+    $(window).resize(() => {
+      const headerSize = $('.page-header').height() + 2 * 30; // 2 * margin/padding
+      const maxHeightLeft = $(window).height() - headerSize;
+
+      // taking into consideration the fact that the add-on will be contained within an iframe etc.
+      // don't go under 400px though
+      const containerHeight = Math.max(maxHeightLeft - 60, 600);
+      $('.base-cards-view').height(containerHeight);
+      $('.card-column').height(containerHeight);
+    });
   }
 }
