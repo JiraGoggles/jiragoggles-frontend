@@ -3,21 +3,20 @@
  */
 import {Component} from '@angular/core';
 import {RootService} from "../services/root/root.service";
-import {BasePaginateCardComponent} from "../base-paginate-card.component";
+import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.component";
 
 
 @Component({
   selector: 'test',
-  templateUrl: '../base-view.component.html',
-  styleUrls: [ '../base-view.component.css' ]
+  templateUrl: '../base-scrollable-cards-view.component.html',
+  styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
-export class RootComponent extends BasePaginateCardComponent {
+export class RootComponent extends BaseScrollableCardsViewComponent {
   constructor(private rootService: RootService) {
     super();
   }
 
-  getPage(page: number) {
-    this._getPage(page, this.rootService.getPage(page, 4));
+  loadNextBatch() {
+    this._loadNextBatch(this.rootService.getPage(this.nextBatchNumber, this.perBatch));
   }
-
 }

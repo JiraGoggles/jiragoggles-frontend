@@ -6,7 +6,8 @@ import {ChildCard} from "../card";
 
 @Component({
   selector: 'child-card',
-  templateUrl: './child-card.component.html'
+  templateUrl: './child-card.component.html',
+  styleUrls: [ '../card.component.scss', './child-card.component.scss' ]
 })
 
 export class ChildCardComponent implements  OnInit {

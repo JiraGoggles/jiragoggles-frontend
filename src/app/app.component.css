@@ -6,3 +6,7 @@ html, body{
 span.active {
   background-color: gray;
 }
+
+.page-header {
+  margin-top: 30px;
+}

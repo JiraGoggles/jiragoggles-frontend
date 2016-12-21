@@ -1,33 +1,21 @@
-
-<!--<div class="panel panel-default">-->
-<div class="panel panel-primary">
-
+<div class="card panel panel-primary">
   <div class="panel-heading" >
-    <div>
-      <h3 class="panel-title">
-        <strong>
-          <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="path" class="navbar-link" style="color: white">[{{model.key}}]</a>
-          <a *ngIf="model.type.toLowerCase() == 'sub-task'" href="{{JiraUrl}}" class="navbar-link" style="color: white">[{{model.key}}]</a>
-        </strong>
-      </h3>
+    <div class="panel-title">
+      <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="path" class="navbar-link">[{{model.key}}]</a>
+      <a *ngIf="model.type.toLowerCase() == 'sub-task'" href="{{JiraUrl}}" class="navbar-link">[{{model.key}}]</a>
     </div>
   </div>
-  <div class="panel-body collapse in" id="{{model.key}}">
-    <div *ngIf="model.type.toLowerCase() == 'project'" class="col-xs-2" style="padding: 0px 10px 0px 0px; max-width: 60px">
-      <img src="{{model.avatarUrls['48x48']}}" class="img-responsive"/>
+  <div class="panel-body" id="{{model.key}}">
+    <div *ngIf="isOfProjectType" class="project-img">
+      <img *ngIf="model.avatarUrls['48x48']" src="{{model.avatarUrls['48x48']}}"/>
     </div>
-    <div *ngIf="model.type.toLowerCase() != 'project'" class="col-xs-2" style="padding: 0px 15px 0px 0px; max-width: 40px">
-      <img src="{{model.typeImgUrl}}" class="img-responsive"/>
-      <img src="{{model.priorityImgUrl}}" class="img-responsive"/>
+    <div *ngIf="!isOfProjectType" class="others-img">
+      <img *ngIf="model.typeImgUrl" src="{{model.typeImgUrl}}"/>
+      <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}"/>
     </div>
-    <div class="col-xs-10">
-      <div class="row">
-            <span style="white-space: normal">
-            <read-more [text]="model.name">
-            </read-more>
-        </span>
-      </div>
-      <div class="row">
+    <div [ngClass]="{'project-text': isOfProjectType, 'others-text': !isOfProjectType}" >
+      <read-more [maxLength]="50" [text]="model.name"></read-more>
+      <div>
         <span
           [ngClass]="{
             'label-primary': status == statusType.TO_DO,
@@ -38,7 +26,5 @@
           class="label">{{model.status}}</span>
       </div>
     </div>
-
-
   </div>
 </div>
