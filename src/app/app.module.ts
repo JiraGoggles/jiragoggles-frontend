@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import {DndModule} from 'ng2-dnd';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
 
@@ -66,6 +67,7 @@ type StoreType = {
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
+    DndModule.forRoot(),
     Ng2PaginationModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
