@@ -16,7 +16,7 @@ before_install:
 - npm install -g protractor
 - npm install -g typescript
 install:
-- yarn
+- npm install
 before_script:
 - export CHROME_BIN=chromium-browser
 - export DISPLAY=:99.0
@@ -25,7 +25,7 @@ before_script:
 - npm start &
 - sleep 5
 script:
-- npm run build:docker
+- npm run build:prod
 cache:
   directories:
   - "$HOME/.yarn-cache"
