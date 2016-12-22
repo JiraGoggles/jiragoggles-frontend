@@ -37,5 +37,5 @@ deploy:
   app: testjiragoggles-frontend
   on:
     repo: JiraGoggles/jiragoggles-frontend
-    branch: fix-deploy
+    branch: develop
   buildpack: https://github.com/heroku/heroku-buildpack-nodejs#yarn
