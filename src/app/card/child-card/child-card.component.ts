@@ -3,7 +3,6 @@
  */
 import {Component, Input, OnInit} from '@angular/core';
 import {ChildCard} from "../card";
-import {handleExternalLinkClick} from "../common";
 
 @Component({
   selector: 'child-card',
@@ -23,10 +22,5 @@ export class ChildCardComponent implements  OnInit {
       this.jiraUrl = 'https://' + this.model.url.split('/')[2] + '/browse/' + this.model.key;
     else
       this.jiraUrl = '';
-  }
-
-  // TODO the event type can probably be narrowed down
-  onJiraLinkClick(event: any) {
-    handleExternalLinkClick(event, this.jiraUrl);
   }
 }

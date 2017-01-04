@@ -4,7 +4,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ParentCard} from "../card";
 import {ChildCardComponent} from "../child-card/child-card.component";
-import {handleExternalLinkClick} from "../common";
 
 enum StatusType {
   TO_DO,
@@ -56,10 +55,5 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
       }
     }
     this.isOfProjectType = this.model.type.toLowerCase() === 'project';
-  }
-
-  // TODO the event type can probably be narrowed down
-  onJiraLinkClick(event: any) {
-    handleExternalLinkClick(event, this.JiraUrl);
   }
 }
