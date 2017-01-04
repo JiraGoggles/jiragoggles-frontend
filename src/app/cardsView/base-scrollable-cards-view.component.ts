@@ -6,6 +6,9 @@ import {Observable} from "rxjs";
 import {PaginateResponse} from "./services/paginate-response";
 import * as $ from 'jquery';
 
+// required because the corresponding library is available only after the addon has been loaded in the iframe
+declare var AP: any;
+
 export abstract class BaseScrollableCardsViewComponent {
   readonly perBatch: number = 12;
 
@@ -21,6 +24,7 @@ export abstract class BaseScrollableCardsViewComponent {
 
   public ngOnInit() {
     this.loadNextBatch();
+    this.registerWindowResizeEventHandler();
   }
 
   protected _loadNextBatch(source: Observable<PaginateResponse<ParentCard>>): void {
@@ -39,6 +43,9 @@ export abstract class BaseScrollableCardsViewComponent {
       // otherwise it gets stuck at its end position after loading a batch
       const container = document.getElementsByClassName('container-scrollable')[0];
       container.scrollLeft -= 10;
+
+      // react to possible changes of the container size that may happen after the batch has been loaded
+      setTimeout(() => this.updateContainerHeight(), 0);
     });
   }
 
@@ -56,17 +63,25 @@ export abstract class BaseScrollableCardsViewComponent {
     }
   }
 
-  //TODO not sure if it belongs in here or in some more general component
-  public ngAfterViewInit() {
+  private updateContainerHeight() {
+    $(window).trigger('resize');
+
+    // if the addon is not being loaded within the iframe then the 'AP' object is not available
+    try {
+      AP.sizeToParent(true);
+    }
+    catch (ex) {} // in the dev mode it's not that important - ignore it
+  }
+
+  private registerWindowResizeEventHandler() {
     $(window).resize(() => {
       const headerSize = $('.page-header').height() + 2 * 30; // 2 * margin/padding
-      const maxHeightLeft = $(window).height() - headerSize;
+      let maxHeightLeft = $(window).height() - headerSize - 50;
 
-      // taking into consideration the fact that the add-on will be contained within an iframe etc.
-      // don't go below 400px though
-      const containerHeight = Math.max(maxHeightLeft - 60, 400);
-      $('.base-cards-view').height(containerHeight);
-      $('.card-column').height(containerHeight);
+      if (maxHeightLeft >= 400) { // if maxHeightLeft isn't even 400 px then it's going to look bad anyway
+        $('.base-cards-view').height(maxHeightLeft);
+        $('.card-column').height(maxHeightLeft);
+      }
     });
   }
 }
