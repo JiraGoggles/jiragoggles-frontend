@@ -17,8 +17,7 @@ export abstract class BaseScrollableCardsViewComponent {
   total: number;
   loading: boolean = false;
 
-  containerScrollbarConfig = { suppressScrollY: true };
-  columnScrollbarConfig = { suppressScrollX: true };
+  containerScrollbarConfig = { suppressScrollY: false };
 
   public abstract loadNextBatch() : void;
 

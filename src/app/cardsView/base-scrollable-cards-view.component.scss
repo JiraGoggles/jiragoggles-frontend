@@ -1,10 +1,8 @@
 $cardColumnWidth: 250px;
-$cardColumnHeight: 350px;
 
 .base-cards-view {
   position: relative;
   z-index: 1;
-  height: $cardColumnHeight;
 }
 
 .container-scrollable {
@@ -17,8 +15,9 @@ $cardColumnHeight: 350px;
 
 .card-column {
   width: $cardColumnWidth;
-  height: $cardColumnHeight;
-  display: inline-block !important;
+  height: 100% !important;
+  display: inline-block;
+  vertical-align: top;
   white-space: normal;
   overflow: hidden;
   padding-top: 10px;
