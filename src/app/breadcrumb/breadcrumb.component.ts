@@ -57,7 +57,7 @@ export class BreadcrumbComponent implements OnInit {
         epicKey = urlParts[2];
         const isEpicItemActive = urlParts.length === 3;
 
-        this.projectService.get(epicKey)
+        this.projectService.get(projectKey)
           .subscribe((epics: PaginateResponse<ParentCard>) => this.epicItem =
             this.convertToIssueItem(this.findCardByKey(epics, epicKey), isEpicItemActive, projectKey));
       }
