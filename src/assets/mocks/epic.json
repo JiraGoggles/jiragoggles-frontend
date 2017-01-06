@@ -36,7 +36,7 @@
     },
     {
       "key": "SC-9",
-      "name": "Important task!",
+      "name": "Important task long lon glong, very very long!",
       "type": "task",
       "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
       "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",

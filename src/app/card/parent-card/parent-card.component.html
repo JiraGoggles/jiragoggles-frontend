@@ -1,8 +1,15 @@
 <div class="card panel panel-primary">
   <div class="panel-heading" >
     <div class="panel-title">
-      <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="path" class="navbar-link">[{{model.key}}]</a>
-      <a *ngIf="model.type.toLowerCase() == 'sub-task'" target="_parent" href="{{JiraUrl}}" class="navbar-link">[{{model.key}}]</a>
+      <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="parentPath" class="navbar-link">{{model.key}}</a>
+      <a *ngIf="model.type.toLowerCase() == 'sub-task'" target="_parent" class="disabled navbar-link">{{model.key}}</a>
+      <div class="pull-right">
+        <button type="button" class="close" aria-label="Close">
+          <a href="{{jiraUrl}}" class="navbar-link" style="color: white;">
+            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+          </a>
+        </button>
+      </div>
     </div>
   </div>
   <div class="panel-body" id="{{model.key}}">

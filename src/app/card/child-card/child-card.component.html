@@ -1,10 +1,17 @@
 <div class="card child-card panel panel-default" >
-    <div class="panel-heading" >
-      <div class="panel-title">
-        <a target="_parent" href="{{jiraUrl}}" class="navbar-link">[{{model.key}}]</a>
+  <div class="panel-body" id="{{model.key}}">
+    <div class="header">
+      <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="childPath" class="navbar-link">{{model.key}}</a>
+      <a *ngIf="model.type.toLowerCase() == 'sub-task'" target="_parent" class="disabled navbar-link">{{model.key}}</a>
+      <div class="pull-right">
+        <button type="button" class="close" aria-label="Close">
+          <a href="{{jiraUrl}}" class="navbar-link" style="color: black;">
+            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+          </a>
+        </button>
       </div>
     </div>
-  <div class="panel-body" id="{{model.key}}">
+
     <div class="others-img">
       <img *ngIf="model.typeImgUrl" src="{{model.typeImgUrl}}"/>
       <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}"/>
