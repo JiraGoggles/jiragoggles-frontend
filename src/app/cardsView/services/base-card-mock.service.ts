@@ -31,4 +31,8 @@ export abstract class BaseCardMockService {
       .delay(delayTime)
       .map(res => <PaginateResponse<ParentCard>>{ total: this.total, cards: res.json().slice(start, start + size)});
   }
+
+  rankIssue(id: string, direction: string, referenceId: string) {
+    console.log(id, direction, referenceId);
+  }
 }
