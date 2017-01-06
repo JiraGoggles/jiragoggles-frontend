@@ -5,7 +5,7 @@
       <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
       <div *ngIf="card.subCards">
         <div *ngFor="let subCard of card.subCards">
-          <child-card [model]="subCard" [type]="subCard.type"></child-card>
+          <child-card [model]="subCard" [parentModel]="card" [type]="subCard.type"></child-card>
         </div>
       </div>
     </perfect-scrollbar>

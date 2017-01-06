@@ -2,6 +2,10 @@
 
 $cardWidth: $cardColumnWidth - 2 * 10px;
 
+a.disabled {
+  cursor: not-allowed;
+}
+
 .card {
   width: $cardWidth;
   margin: 0 auto 15px auto;
@@ -14,6 +18,15 @@ $cardWidth: $cardColumnWidth - 2 * 10px;
     width: $cardWidth;
     padding-left: 5%;
     padding-right: 5%;
+
+    .navbar-link {
+      font-weight: bold;
+      color: #7f7f7f;
+    }
+
+    .header {
+      padding-bottom: 5%;
+    }
 
     & > .project-img {
       width: 15%;

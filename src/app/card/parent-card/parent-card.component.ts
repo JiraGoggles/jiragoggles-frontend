@@ -21,19 +21,17 @@ enum StatusType {
 export class ParentCardComponent extends ChildCardComponent implements OnInit {
   @Input() model: ParentCard;
   @Input() type: string;
-  private path: string;
+  private parentPath: string;
   private statusType = StatusType;
   private status: StatusType;
-  private JiraUrl: string;
   private isOfProjectType: boolean; // for convenience sake (in templateUrl file)
 
   ngOnInit(): void {
-    super.ngOnInit();
-    this.JiraUrl = this.jiraUrl;
+    super.init();
     if(this.model.type.toLowerCase() == 'project')
-      this.path = 'project/' + this.model.key;
+      this.parentPath = 'project/' + this.model.key;
     else {
-      this.path = this.model.key;
+      this.parentPath = this.model.key;
       if (this.model.status != null) {
         switch (this.model.status.toUpperCase()) {
           case "TO DO":

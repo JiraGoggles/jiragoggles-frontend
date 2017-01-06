@@ -4,6 +4,10 @@
   float: left;
 }
 
+a {
+  color: #333333;
+}
+
 .breadcrumb-item {
   float: left;
   width: $breadcrumbItemWidth;
@@ -18,10 +22,17 @@
   }
 
   .panel-body img {
-    height: 25px;
+    height: 20px;
     width: auto;
     float: left;
   }
+
+  .panel-body > .header {
+    padding-bottom: 5%;
+    color: #7f7f7f;
+    font-weight: bold;
+  }
+
 
   .panel-body .content {
     float: left;
