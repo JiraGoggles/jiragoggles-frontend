@@ -5,12 +5,12 @@
   <div class="panel-heading" >
     <div>
       <h3 class="panel-title">
-        <span class="rankButton glyphicon glyphicon-chevron-left" (click)="onRankClick(model.key, 'left')"></span>
+        <span *ngIf="model.type.toLowerCase() != 'project'" class="rankButton glyphicon glyphicon-chevron-left" (click)="onRankClick(model.key, 'left')"></span>
         <strong>
           <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="path" class="navbar-link" style="color: white">[{{model.key}}]</a>
           <a *ngIf="model.type.toLowerCase() == 'sub-task'" href="{{JiraUrl}}" class="navbar-link" style="color: white">[{{model.key}}]</a>
         </strong>
-        <span class="rankButton glyphicon glyphicon-chevron-right" (click)="onRankClick(model.key, 'right')"></span>
+        <span *ngIf="model.type.toLowerCase() != 'project'" class="rankButton glyphicon glyphicon-chevron-right" (click)="onRankClick(model.key, 'right')"></span>
       </h3>
     </div>
   </div>

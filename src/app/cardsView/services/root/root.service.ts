@@ -22,8 +22,4 @@ export class RootService extends BaseCardService {
   getPage(page: number, size: number): Observable<PaginateResponse<ParentCard>> {
     return this._getPage<ParentCard>('api/card/project', page, size);
   }
-
-  rankIssue(id: string, direction: string, referenceId: string): void {
-    this._rankIssue(id, direction, referenceId);
-  }
 }

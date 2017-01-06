@@ -3,9 +3,9 @@
  */
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ParentCard} from "../../card/card";
 import {EpicService} from "../services/epic/epic.service";
 import {BasePaginateCardComponent} from "../base-paginate-card.component";
+import {RankService} from "../services/rank/rank.service";
 
 
 @Component({
@@ -16,8 +16,8 @@ import {BasePaginateCardComponent} from "../base-paginate-card.component";
 export class EpicComponent extends BasePaginateCardComponent {
   private key: number;
 
-  constructor(private route: ActivatedRoute, private service: EpicService) {
-    super();
+  constructor(private route: ActivatedRoute, private service: EpicService, rankService: RankService) {
+    super(rankService);
   }
 
   getPage(page: number) {

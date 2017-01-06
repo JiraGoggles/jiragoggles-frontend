@@ -33,11 +33,6 @@ export abstract class BaseCardService {
     return this._get(path, this.paginationParams(page, size));
   }
 
-  protected _rankIssue(id: string, direction: string, referenceId: string): void {
-      console.log(id, direction, referenceId);
-      this._put(`api/rank/issue/${id}/${direction}/${referenceId}`);
-  }
-
   private paginationParams(page: number, size: number): URLSearchParams {
     let params = new URLSearchParams();
     params.append('page', page.toString());

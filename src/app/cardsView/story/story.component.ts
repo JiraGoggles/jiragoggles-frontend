@@ -3,9 +3,9 @@
  */
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ParentCard} from "../../card/card";
 import {StoryService} from "../services/story/story.service";
 import {BasePaginateCardComponent} from "../base-paginate-card.component";
+import {RankService} from "../services/rank/rank.service";
 
 
 @Component({
@@ -14,8 +14,8 @@ import {BasePaginateCardComponent} from "../base-paginate-card.component";
   styleUrls: [ '../base-view.component.css' ]
 })
 export class StoryComponent extends BasePaginateCardComponent {
-  constructor(private route: ActivatedRoute, private service: StoryService) {
-    super();
+  constructor(private route: ActivatedRoute, private service: StoryService, rankService: RankService) {
+    super(rankService);
   }
 
   getPage(page: number) {

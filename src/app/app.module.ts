@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 
-import { CardComponent } from './card';
 import { NoContentComponent } from './no-content';
 import {ProjectComponent} from "./cardsView/project/project.component";
 import {RootComponent} from "./cardsView/root/root.component";
