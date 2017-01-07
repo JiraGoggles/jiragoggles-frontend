@@ -28,7 +28,8 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
 
   ngOnInit(): void {
     super.init();
-    if(this.model.type.toLowerCase() == 'project')
+    this.isOfProjectType = this.model.type.toLowerCase() === 'project';
+    if(this.isOfProjectType)
       this.parentPath = 'project/' + this.model.key;
     else {
       this.parentPath = this.model.key;
@@ -52,6 +53,5 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
         this.status = StatusType.OTHER;
       }
     }
-    this.isOfProjectType = this.model.type.toLowerCase() === 'project';
   }
 }

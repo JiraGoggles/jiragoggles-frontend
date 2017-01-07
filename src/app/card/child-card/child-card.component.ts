@@ -14,7 +14,7 @@ export class ChildCardComponent implements  OnInit {
   @Input() model: ChildCard;
   @Input() parentModel: ParentCard;
   @Input() type: string;
-  protected jiraUrl: string = "";
+  protected jiraUrl: string = null;
   protected childPath: string;
 
   ngOnInit(): void {
@@ -31,8 +31,5 @@ export class ChildCardComponent implements  OnInit {
     //TODO Is there any other way to get the jira base url?
     if (this.model.url != null)
       this.jiraUrl = 'https://' + this.model.url.split('/')[2] + '/browse/' + this.model.key;
-    else
-      this.jiraUrl = '';
-    console.log(this.jiraUrl);
   }
 }

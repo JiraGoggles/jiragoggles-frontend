@@ -6,12 +6,24 @@ a.disabled {
   cursor: not-allowed;
 }
 
+a.link {
+  color: #ffffff;
+}
+
+a.link:hover {
+  color: #dddddd;
+}
+
 .card {
   width: $cardWidth;
   margin: 0 auto 15px auto;
 
   .panel-title > .navbar-link {
     font-weight: bold;
+  }
+
+  .glyphicon-small {
+    font-size: small;
   }
 
   .panel-body {
