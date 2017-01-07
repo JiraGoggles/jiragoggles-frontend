@@ -2,13 +2,11 @@
   <div class="panel-heading" >
     <div class="panel-title">
       <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="parentPath" class="navbar-link">{{model.key}}</a>
-      <a *ngIf="model.type.toLowerCase() == 'sub-task'" target="_parent" class="disabled navbar-link">{{model.key}}</a>
-      <div class="pull-right">
-        <button type="button" class="close" aria-label="Close">
-          <a href="{{jiraUrl}}" class="navbar-link" style="color: white;">
-            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+      <a *ngIf="model.type.toLowerCase() == 'sub-task'" class="disabled navbar-link">{{model.key}}</a>
+      <div *ngIf="model.key.toLowerCase() != 'others'" class="pull-right">
+          <a href="{{jiraUrl}}" target="_parent" class="link">
+            <span class="glyphicon glyphicon-share-alt glyphicon-small" aria-hidden="true"></span>
           </a>
-        </button>
       </div>
     </div>
   </div>
@@ -30,7 +28,7 @@
             'label-success': status == statusType.DONE,
             'label-default': status == statusType.OTHER
           }"
-          class="label">{{model.status}}</span>
+          class="label">{{model.status | uppercase}}</span>
       </div>
     </div>
   </div>
