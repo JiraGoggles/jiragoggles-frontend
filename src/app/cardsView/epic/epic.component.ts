@@ -6,6 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 import {EpicService} from "../services/epic/epic.service";
 import {BasePaginateCardComponent} from "../base-paginate-card.component";
 import {RankService} from "../services/rank/rank.service";
+import {DragulaService} from "ng2-dragula/components/dragula.provider";
 
 
 @Component({
@@ -16,8 +17,8 @@ import {RankService} from "../services/rank/rank.service";
 export class EpicComponent extends BasePaginateCardComponent {
   private key: number;
 
-  constructor(private route: ActivatedRoute, private service: EpicService, rankService: RankService) {
-    super(rankService);
+  constructor(private route: ActivatedRoute, private service: EpicService, rankService: RankService, dragulaService: DragulaService) {
+    super(rankService, dragulaService);
   }
 
   getPage(page: number) {

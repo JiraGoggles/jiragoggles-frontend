@@ -6,6 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 import {StoryService} from "../services/story/story.service";
 import {BasePaginateCardComponent} from "../base-paginate-card.component";
 import {RankService} from "../services/rank/rank.service";
+import {DragulaService} from "ng2-dragula/components/dragula.provider";
 
 
 @Component({
@@ -14,8 +15,8 @@ import {RankService} from "../services/rank/rank.service";
   styleUrls: [ '../base-view.component.css' ]
 })
 export class StoryComponent extends BasePaginateCardComponent {
-  constructor(private route: ActivatedRoute, private service: StoryService, rankService: RankService) {
-    super(rankService);
+  constructor(private route: ActivatedRoute, private service: StoryService, rankService: RankService, dragulaService: DragulaService) {
+    super(rankService, dragulaService);
   }
 
   getPage(page: number) {
