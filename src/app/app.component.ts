@@ -12,8 +12,17 @@ import {SessionService} from "./session.service";
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: [
+    './app.component.css'
+  ],
+  template: `
+    <main class="col-md-12 center-block">
+      <div class="row page-header">
+        <breadcrumb></breadcrumb>
+      </div>
+      <router-outlet></router-outlet>
+    </main>
+  `
 })
 
 export class AppComponent {

@@ -1,14 +1,14 @@
 <div class="base-cards-view">
   <perfect-scrollbar (ps-x-reach-end)="scrolledToEnd($event)" [config]="containerScrollbarConfig" class="container-scrollable">
 
-    <div class="card-column" *ngFor="let card of cards">
+    <perfect-scrollbar [config]="columnScrollbarConfig" class="card-column" *ngFor="let card of cards">
       <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
       <div *ngIf="card.subCards">
         <div *ngFor="let subCard of card.subCards">
           <child-card [model]="subCard" [parentModel]="card" [type]="subCard.type"></child-card>
         </div>
       </div>
-    </div>
+    </perfect-scrollbar>
   </perfect-scrollbar>
 
   <div *ngIf="loading" class="loading-overlay">
