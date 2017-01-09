@@ -1,6 +1,6 @@
 <div class="card panel panel-primary">
   <div class="panel-heading" >
-    <div class="panel-title">
+    <div class="panel-title" >
       <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="parentPath" class="navbar-link">{{model.key}}</a>
       <a *ngIf="model.type.toLowerCase() == 'sub-task'" class="disabled navbar-link">{{model.key}}</a>
       <div *ngIf="model.key.toLowerCase() != 'others'" class="pull-right">
@@ -15,8 +15,8 @@
       <img *ngIf="model.avatarUrls['48x48']" src="{{model.avatarUrls['48x48']}}"/>
     </div>
     <div *ngIf="!isOfProjectType" class="others-img">
-      <img *ngIf="model.typeImgUrl" src="{{model.typeImgUrl}}"/>
-      <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}"/>
+      <img *ngIf="model.typeImgUrl" src="{{model.typeImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.type}}"/>
+      <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.priority}}"/>
     </div>
     <div [ngClass]="{'project-text': isOfProjectType, 'others-text': !isOfProjectType}" >
       <read-more [maxLength]="50" [text]="model.name"></read-more>

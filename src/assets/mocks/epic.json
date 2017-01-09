@@ -15,7 +15,7 @@
           "name": "This is first sub-task in this story.",
           "type": "sub-task",
           "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+          "priorityImgUrl": "https://testjiragoggles.atlassian.net/images/icons/priorities/medium.svg"
         },
         {
           "key": "SC-81",
@@ -23,14 +23,14 @@
           "type": "sub-task",
           "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
           "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+          "priorityImgUrl": "https://testjiragoggles.atlassian.net/images/icons/priorities/medium.svg"
         },
         {
           "key": "SC-82",
           "name": "Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name. Other sub-task with lon name.",
           "type": "sub-task",
           "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+          "priorityImgUrl": "https://testjiragoggles.atlassian.net/images/icons/priorities/medium.svg"
         }
       ]
     },
@@ -48,7 +48,7 @@
           "name": "This is first sub-task in this story.",
           "type": "sub-task",
           "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10036",
-          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+          "priorityImgUrl": "https://testjiragoggles.atlassian.net/images/icons/priorities/medium.svg"
         },
         {
           "key": "SC-91",
@@ -56,7 +56,7 @@
           "type": "sub-task",
           "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10024",
           "typeImgUrl": "http://www.freeiconspng.com/uploads/tasks-icon-12.png",
-          "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png"
+          "priorityImgUrl": "https://testjiragoggles.atlassian.net/images/icons/priorities/medium.svg"
         },
         {
           "key": "SC-92",
