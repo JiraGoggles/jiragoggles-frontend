@@ -17,6 +17,7 @@ export abstract class BaseScrollableCardsViewComponent {
   total: number;
   loading: boolean = false;
 
+  resizingAllowed: boolean = false;
   containerScrollbarConfig = { suppressScrollY: true };
   columnScrollbarConfig = { suppressScrollX: true };
 
@@ -64,6 +65,7 @@ export abstract class BaseScrollableCardsViewComponent {
   }
 
   private updateContainerHeight() {
+    this.resizingAllowed = true;
     $(window).trigger('resize');
 
     // if the addon is not being loaded within the iframe then the 'AP' object is not available
@@ -75,12 +77,24 @@ export abstract class BaseScrollableCardsViewComponent {
 
   private registerWindowResizeEventHandler() {
     $(window).resize(() => {
-      const headerSize = $('.page-header').height() + 2 * 30; // 2 * margin/padding
-      let maxHeightLeft = $(window).height() - headerSize - 50;
+      if (this.resizingAllowed) {
 
-      if (maxHeightLeft >= 400) { // if maxHeightLeft isn't even 400 px then it's going to look bad anyway
-        $('.base-cards-view').height(maxHeightLeft);
-        $('.card-column').height(maxHeightLeft);
+        const headerTopSpace = parseInt($('.page-header').css('margin-top'), 10) +
+          parseInt($('.page-header').css('padding-top'), 10);
+        const headerBottomSpace = parseInt($('.page-header').css('margin-bottom'), 10) +
+          parseInt($('.page-header').css('padding-bottom'), 10);
+        const headerTotalHeight = $('.page-header').height() + headerTopSpace + headerBottomSpace;
+
+        const footerHeight = $('.footer').height();
+
+        let maxHeightLeft = $(window).height() - headerTotalHeight - footerHeight - 20;
+
+        if (maxHeightLeft >= 350) { // if maxHeightLeft isn't even 350 px then it's going to look bad anyway
+          $('.base-cards-view').height(maxHeightLeft);
+          $('.card-column').height(maxHeightLeft);
+        }
+
+        this.resizingAllowed = false;
       }
     });
   }
