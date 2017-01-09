@@ -1,7 +1,9 @@
 /**
  * Created by wiekonek on 11.12.16.
  */
-import {Component, Input, OnInit} from '@angular/core';
+import {
+  Component, Input, OnInit
+} from '@angular/core';
 import {ChildCard, ParentCard} from "../card";
 
 @Component({
@@ -14,6 +16,7 @@ export class ChildCardComponent implements  OnInit {
   @Input() model: ChildCard;
   @Input() parentModel: ParentCard;
   @Input() type: string;
+
   protected jiraUrl: string = null;
   protected childPath: string;
 

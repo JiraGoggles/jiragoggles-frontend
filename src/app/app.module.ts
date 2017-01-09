@@ -31,7 +31,7 @@ import {SessionService} from "./session.service";
 import {BreadcrumbItemComponent} from "./breadcrumb/breadcrumb-item/breadcrumb-item.component";
 import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
-
+import {TooltipModule} from "ng2-bootstrap";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -73,6 +73,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule,
     Ng2PaginationModule,
     HttpModule,
+    TooltipModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
