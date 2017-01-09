@@ -5,7 +5,6 @@ import {ParentCard} from "../card/card";
 import {Observable} from "rxjs";
 import {PaginateResponse} from "./services/paginate-response";
 import {RankService} from "./services/rank/rank.service";
-import {DragulaService} from "ng2-dragula/components/dragula.provider";
 
 
 export abstract class BasePaginateCardComponent {
@@ -16,23 +15,7 @@ export abstract class BasePaginateCardComponent {
   total: number;
   loading: boolean;
 
-  constructor(private rankService: RankService, private dragulaService: DragulaService) {
-    dragulaService.drag.subscribe((value) => {
-      console.log(`drag: ${value[0]}`);
-      this.onDrag(value.slice(1));
-    });
-    dragulaService.drop.subscribe((value) => {
-      console.log(`drop: ${value[0]}`);
-      this.onDrop(value.slice(1));
-    });
-    dragulaService.over.subscribe((value) => {
-      console.log(`over: ${value[0]}`);
-      this.onOver(value.slice(1));
-    });
-    dragulaService.out.subscribe((value) => {
-      console.log(`out: ${value[0]}`);
-      this.onOut(value.slice(1));
-    });
+  constructor(private rankService: RankService) {
   }
 
   public abstract getPage(page: number) : void;
@@ -52,29 +35,17 @@ export abstract class BasePaginateCardComponent {
       .map(res => (<PaginateResponse<ParentCard>>res).cards);
   }
 
-  private onDrag(args) {
-    let [e, el] = args;
-    // do something
-  }
+  dropSuccess($event) {
+    let dropped = document.getElementById($event+"-subCard");
+    let prevNeighbor = dropped.previousElementSibling;
+    let nextNeighbor = dropped.nextElementSibling;
 
-  private onDrop(args) {
-    let [e, el] = args;
-    console.log(e.id);
-    console.log(el.id);
-    // do something
-  }
-
-  private onOver(args) {
-    let [e, el, container] = args;
-    console.log(e);
-    console.log(el);
-    console.log(container);
-    // do something
-  }
-
-  private onOut(args) {
-    let [e, el, container] = args;
-    // do something
+    if (prevNeighbor !== null) {
+      this.rankService.rankIssue(dropped.id.slice(0, -8), "After", prevNeighbor.id.slice(0, -8));
+    }
+    else if (nextNeighbor !== null) {
+      this.rankService.rankIssue(dropped.id.slice(0, -8), "Before", nextNeighbor.id.slice(0, -8));
+    }
   }
 
   onRankChangeRequest(args: string[]) {
@@ -93,6 +64,8 @@ export abstract class BasePaginateCardComponent {
   private rankUp(caller: Element, parent: Element) {
     let neighbor = caller.previousElementSibling;
     if (neighbor !== null) {
+      if (neighbor.id === "OTHERS")
+        return;
       this.rankService.rankIssue(caller.id, "Before", neighbor.id);
       parent.insertBefore(caller, neighbor);
 
@@ -102,6 +75,8 @@ export abstract class BasePaginateCardComponent {
   private rankDown(caller: Element, parent: Element) {
     let neighbor = caller.nextElementSibling;
     if (neighbor !== null) {
+      if (neighbor.id === "OTHERS")
+        return;
       this.rankService.rankIssue(caller.id, "After", neighbor.id);
       parent.insertBefore(neighbor, caller);
     }

@@ -28,7 +28,7 @@ import {EpicComponent} from "./cardsView/epic/epic.component";
 import {StoryComponent} from "./cardsView/story/story.component";
 import {Ng2PaginationModule} from 'ng2-pagination';
 import {SessionService} from "./session.service";
-import {DragulaModule} from "ng2-dragula";
+import {DndModule} from "ng2-dnd";
 
 
 
@@ -65,7 +65,7 @@ type StoreType = {
   ],
   imports: [ // import Angular's modules
     BrowserModule,
-    DragulaModule,
+    DndModule.forRoot(),
     FormsModule,
     Ng2PaginationModule,
     HttpModule,
