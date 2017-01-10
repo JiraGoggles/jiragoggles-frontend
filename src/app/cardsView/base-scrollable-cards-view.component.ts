@@ -17,15 +17,15 @@ export abstract class BaseScrollableCardsViewComponent {
   total: number;
   loading: boolean = false;
 
-  resizingAllowed: boolean = false;
+  shouldHandleCustomResizeEvent: boolean = false;
   containerScrollbarConfig = { suppressScrollY: true };
   columnScrollbarConfig = { suppressScrollX: true };
 
   public abstract loadNextBatch() : void;
 
   public ngOnInit() {
-    this.loadNextBatch();
     this.registerWindowResizeEventHandler();
+    this.loadNextBatch();
   }
 
   protected _loadNextBatch(source: Observable<PaginateResponse<ParentCard>>): void {
@@ -65,19 +65,21 @@ export abstract class BaseScrollableCardsViewComponent {
   }
 
   private updateContainerHeight() {
-    this.resizingAllowed = true;
-    $(window).trigger('resize');
-
     // if the addon is not being loaded within the iframe then the 'AP' object is not available
     try {
       AP.sizeToParent(true);
     }
     catch (ex) {} // in the dev mode it's not that important - ignore it
+
+    this.shouldHandleCustomResizeEvent = true;
+    $(window).trigger('resize', 'custom');
   }
 
   private registerWindowResizeEventHandler() {
-    $(window).resize(() => {
-      if (this.resizingAllowed) {
+    $(window).resize((e, eventType) => {
+      // if the event isn't 'ours' then we handle it no matter what (it's usually raised by the iframe)
+      // otherwise we perform an additional check
+      if (typeof eventType === 'undefined' || this.shouldHandleCustomResizeEvent) {
 
         const headerTopSpace = parseInt($('.page-header').css('margin-top'), 10) +
           parseInt($('.page-header').css('padding-top'), 10);
@@ -94,7 +96,7 @@ export abstract class BaseScrollableCardsViewComponent {
           $('.card-column').height(maxHeightLeft);
         }
 
-        this.resizingAllowed = false;
+        this.shouldHandleCustomResizeEvent = false;
       }
     });
   }
