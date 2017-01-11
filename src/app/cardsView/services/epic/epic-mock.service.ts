@@ -3,9 +3,6 @@
  */
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {ProjectService} from "./project.service";
-import {ParentCard} from "../../../card/card";
-import {Observable} from "rxjs";
 import {BaseCardMockService} from "../base-card-mock.service";
 
 @Injectable()

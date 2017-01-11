@@ -1,0 +1,57 @@
+@import '../breadcrumb.component';
+
+.breadcrumb-wrapper {
+  float: left;
+}
+
+a {
+  color: #333333;
+}
+
+.breadcrumb-item {
+  float: left;
+  width: $breadcrumbItemWidth;
+  min-height: $breadcrumbItemHeight;
+
+  .panel-heading {
+    height: 37px;
+  }
+
+  .panel-body {
+    min-height: $breadcrumbItemHeight - 37px;
+  }
+
+  .panel-body img {
+    height: 20px;
+    width: auto;
+    float: left;
+  }
+
+  .panel-body > .header {
+    padding-bottom: 5%;
+    color: #7f7f7f;
+    font-weight: bold;
+  }
+
+
+  .panel-body .content {
+    float: left;
+    padding-left: 10px;
+    width: $breadcrumbItemWidth - 2 * 1 - 2 * 15 - 25; // 2 * border, 2 * padding, img
+  }
+}
+
+.breadcrumb-separator {
+  float: left;
+  width: $breadcrumbSeparatorWidth;
+  height: $breadcrumbItemHeight;
+
+  .symbol {
+    height: 50px;
+    padding-top: $breadcrumbItemHeight / 2 - 25px;
+    font-weight: bold;
+    font-size: xx-large;
+    color: #D0D0D0;
+    text-align: center;
+  }
+}

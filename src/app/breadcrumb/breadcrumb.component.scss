@@ -1,0 +1,11 @@
+$breadcrumbContainerPadding: 30px;
+$breadcrumbItemWidth: 230px;
+$breadcrumbItemHeight: 80px;
+$breadcrumbSeparatorWidth: 30px;
+
+.breadcrumb-container {
+  padding-left: $breadcrumbContainerPadding;
+  padding-right: $breadcrumbContainerPadding;
+  width: 4 * $breadcrumbItemWidth + 3 * $breadcrumbSeparatorWidth + 2 * $breadcrumbContainerPadding;
+  height: $breadcrumbItemHeight;
+}

@@ -1,7 +1,6 @@
 /**
  * Created by wiekonek on 13.12.16.
  */
-import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import {ParentCard} from "../../card/card";
 import {Observable} from "rxjs";
@@ -17,11 +16,7 @@ export abstract class BaseCardMockService {
 
   protected abstract get path(): string;
 
-  protected get total(): number {
-    return 8;
-  }
-
-  get(..._: any[]): Observable<ParentCard[]> {
+  get(..._: any[]): Observable<PaginateResponse<ParentCard>> {
     return this.http.get(this.path).delay(delayTime).map(res => res.json());
   }
 
@@ -29,6 +24,9 @@ export abstract class BaseCardMockService {
     let start = (page-1)*size;
     return this.http.get(this.path)
       .delay(delayTime)
-      .map(res => <PaginateResponse<ParentCard>>{ total: this.total, cards: res.json().slice(start, start + size)});
+      .map((res: any) => <PaginateResponse<ParentCard>>{
+        total: res.total,
+        cards: res.json().cards.slice(start, start + size)
+      });
   }
 }

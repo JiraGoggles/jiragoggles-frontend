@@ -5,6 +5,7 @@ interface Dictionary<T> {
   [ index: string ]: T
 }
 
+
 export interface ParentCard extends Card {
   subCards?: ChildCard[];
 
@@ -19,6 +20,7 @@ export interface  ChildCard extends Card {
 export interface Card {
   key: string;
   type: string;
+  priority: string;
   url: string; // TODO Api url isn't necessary. I'd like to have an url to JIRA page here.
 
   name: string;

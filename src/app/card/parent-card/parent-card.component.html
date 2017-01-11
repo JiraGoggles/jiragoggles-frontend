@@ -1,35 +1,28 @@
-
-<!--<div class="panel panel-default">-->
-<div class="panel panel-primary">
-
+<div class="card panel panel-primary">
   <div class="panel-heading" >
-    <div>
-      <h3 class="panel-title">
-        <span *ngIf="model.type.toLowerCase() != 'project' && model.key != 'OTHERS'" class="rankButton glyphicon glyphicon-chevron-left" (click)="onRankClick(model.key, 'left')"></span>
-        <strong>
-          <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="path" class="navbar-link" style="color: white">[{{model.key}}]</a>
-          <a *ngIf="model.type.toLowerCase() == 'sub-task'" href="{{JiraUrl}}" class="navbar-link" style="color: white">[{{model.key}}]</a>
-        </strong>
-        <span *ngIf="model.type.toLowerCase() != 'project' && model.key != 'OTHERS'" class="rankButton glyphicon glyphicon-chevron-right" (click)="onRankClick(model.key, 'right')"></span>
-      </h3>
+    <div class="panel-title" >
+      <span *ngIf="model.type.toLowerCase() != 'project' && model.key != 'OTHERS'" class="rankButton glyphicon glyphicon-chevron-left" (click)="onRankClick(model.key, 'left')"></span>
+      <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="parentPath" class="navbar-link">{{model.key}}</a>
+      <a *ngIf="model.type.toLowerCase() == 'sub-task'" class="disabled navbar-link">{{model.key}}</a>
+      <span *ngIf="model.type.toLowerCase() != 'project' && model.key != 'OTHERS'" class="rankButton glyphicon glyphicon-chevron-right" (click)="onRankClick(model.key, 'right')"></span>
+      <div *ngIf="model.key.toLowerCase() != 'others'" class="pull-right">
+          <a href="{{jiraUrl}}" target="_parent" class="link">
+            <span class="glyphicon glyphicon-share-alt glyphicon-small" aria-hidden="true"></span>
+          </a>
+      </div>
     </div>
   </div>
-  <div class="panel-body collapse in" id="{{model.key}}">
-    <div *ngIf="model.type.toLowerCase() == 'project'" class="col-xs-2" style="padding: 0px 10px 0px 0px; max-width: 60px">
-      <img src="{{model.avatarUrls['48x48']}}" class="img-responsive"/>
+  <div class="panel-body" id="{{model.key}}">
+    <div *ngIf="isOfProjectType" class="project-img">
+      <img *ngIf="model.avatarUrls['48x48']" src="{{model.avatarUrls['48x48']}}"/>
     </div>
-    <div *ngIf="model.type.toLowerCase() != 'project'" class="col-xs-2" style="padding: 0px 15px 0px 0px; max-width: 40px">
-      <img src="{{model.typeImgUrl}}" class="img-responsive"/>
-      <img src="{{model.priorityImgUrl}}" class="img-responsive"/>
+    <div *ngIf="!isOfProjectType" class="others-img">
+      <img *ngIf="model.typeImgUrl" src="{{model.typeImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.type}}"/>
+      <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.priority}}"/>
     </div>
-    <div class="col-xs-10">
-      <div class="row">
-            <span style="white-space: normal">
-            <read-more [text]="model.name">
-            </read-more>
-        </span>
-      </div>
-      <div class="row">
+    <div [ngClass]="{'project-text': isOfProjectType, 'others-text': !isOfProjectType}" >
+      <read-more [maxLength]="50" [text]="model.name"></read-more>
+      <div>
         <span
           [ngClass]="{
             'label-primary': status == statusType.TO_DO,
@@ -37,10 +30,8 @@
             'label-success': status == statusType.DONE,
             'label-default': status == statusType.OTHER
           }"
-          class="label">{{model.status}}</span>
+          class="label">{{model.status | uppercase}}</span>
       </div>
     </div>
-
-
   </div>
 </div>

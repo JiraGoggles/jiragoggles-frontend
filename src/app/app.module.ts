@@ -28,6 +28,10 @@ import {EpicComponent} from "./cardsView/epic/epic.component";
 import {StoryComponent} from "./cardsView/story/story.component";
 import {Ng2PaginationModule} from 'ng2-pagination';
 import {SessionService} from "./session.service";
+import {BreadcrumbItemComponent} from "./breadcrumb/breadcrumb-item/breadcrumb-item.component";
+import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
+import {TooltipModule} from "ng2-bootstrap";
 import {DndModule} from "ng2-dnd";
 
 
@@ -46,6 +50,9 @@ type StoreType = {
   disposeOldHosts: () => void
 };
 
+const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+};
+
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -60,6 +67,7 @@ type StoreType = {
     ChildCardComponent,
     ParentCardComponent,
     BreadcrumbComponent,
+    BreadcrumbItemComponent,
     NoContentComponent,
     ReadMoreComponent
   ],
@@ -69,7 +77,9 @@ type StoreType = {
     DndModule.forRoot(),
     Ng2PaginationModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    TooltipModule,
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

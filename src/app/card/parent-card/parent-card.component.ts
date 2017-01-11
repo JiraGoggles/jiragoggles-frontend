@@ -15,17 +15,18 @@ enum StatusType {
 @Component({
   selector: 'parent-card',
   templateUrl: './parent-card.component.html',
-  styleUrls: ['parent-card.component.css']
+  styleUrls: [ '../card.component.scss' ]
 })
 
 export class ParentCardComponent extends ChildCardComponent implements OnInit {
   @Input() model: ParentCard;
   @Input() type: string;
   @Output() onRankChangeRequest = new EventEmitter<string[]>();
+  private parentPath: string;
   private path: string;
   private statusType = StatusType;
   private status: StatusType;
-  private JiraUrl: string;
+  private isOfProjectType: boolean; // for convenience sake (in templateUrl file)
 
   public onRankClick(id: string, direction: string){
     let args: string[] = [id, direction];
@@ -33,12 +34,12 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    super.ngOnInit();
-    this.JiraUrl = this.jiraUrl;
-    if(this.model.type.toLowerCase() == 'project')
-      this.path = 'project/' + this.model.key;
+    super.init();
+    this.isOfProjectType = this.model.type.toLowerCase() === 'project';
+    if(this.isOfProjectType)
+      this.parentPath = 'project/' + this.model.key;
     else {
-      this.path = this.model.key;
+      this.parentPath = this.model.key;
       if (this.model.status != null) {
         switch (this.model.status.toUpperCase()) {
           case "TO DO":
@@ -58,7 +59,6 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
       else {
         this.status = StatusType.OTHER;
       }
-
     }
   }
 }

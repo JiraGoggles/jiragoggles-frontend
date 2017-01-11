@@ -3,9 +3,10 @@
  */
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {ParentCard} from "../../card/card";
 import {StoryService} from "../services/story/story.service";
-import {BasePaginateCardComponent} from "../base-scrollable-cards-view.component";
 import {RankService} from "../services/rank/rank.service";
+import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.component";
 
 
 @Component({
@@ -13,19 +14,19 @@ import {RankService} from "../services/rank/rank.service";
   templateUrl: '../base-scrollable-cards-view.component.html',
   styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
-export class StoryComponent extends BasePaginateCardComponent {
+export class StoryComponent extends BaseScrollableCardsViewComponent {
   constructor(private route: ActivatedRoute, private service: StoryService, rankService: RankService) {
     super(rankService);
   }
 
-  getPage(page: number) {
+  loadNextBatch() {
     let keys: string[] =[];
 
     this.route.params
       .map(params => [params['projectKey'], params['epicKey'], params['storyKey']])
       .subscribe(ks => keys = ks);
 
-    // TODO Wait for this.key assignment in this.service.getPage
-    this._getPage(page, this.service.getPage(page, this.perPage, keys[0], keys[1], keys[2]));
+    // TODO Wait for this.key assignment in this.service.loadNextBatch
+    this._loadNextBatch(this.service.getPage(this.nextBatchNumber, this.perBatch, keys[0], keys[1], keys[2]));
   }
 }

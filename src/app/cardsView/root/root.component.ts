@@ -3,8 +3,8 @@
  */
 import {Component} from '@angular/core';
 import {RootService} from "../services/root/root.service";
-import {BasePaginateCardComponent} from "../base-scrollable-cards-view.component";
 import {RankService} from "../services/rank/rank.service";
+import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.component";
 
 
 @Component({
@@ -12,13 +12,12 @@ import {RankService} from "../services/rank/rank.service";
   templateUrl: '../base-scrollable-cards-view.component.html',
   styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
-export class RootComponent extends BasePaginateCardComponent {
+export class RootComponent extends BaseScrollableCardsViewComponent {
   constructor(private rootService: RootService, rankService: RankService) {
     super(rankService);
   }
 
-  getPage(page: number) {
-    this._getPage(page, this.rootService.getPage(page, 4));
+  loadNextBatch() {
+    this._loadNextBatch(this.rootService.getPage(this.nextBatchNumber, this.perBatch));
   }
-
 }
