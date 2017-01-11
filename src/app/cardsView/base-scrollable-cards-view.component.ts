@@ -71,7 +71,7 @@ export abstract class BaseScrollableCardsViewComponent {
         let callerId: string = args[0];
         let direction: string = args[1];
         let caller = document.getElementById(callerId);
-        let parent = document.getElementById('main-row');
+        let parent = document.getElementById('perfect-scrollbar').children[0];
 
         if (direction == 'left') {
             this.rankUp(caller, parent);
