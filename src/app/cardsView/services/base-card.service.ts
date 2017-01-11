@@ -20,12 +20,8 @@ export abstract class BaseCardService {
      .map(res => res.json());
   }
 
-  protected _put<T>(path: string, params?: URLSearchParams): Observable<T> {
-      let req = new RequestOptions({search: params == null ? new URLSearchParams : params});
-      req.search.appendAll(this.pluginAuth.RequestOptionsWithPluginAuthentication.search);
-
-      return this.http
-          .put(path, req)
+  protected _put<T>(path: string): Observable<T> {
+      return this.http.put(path, "")
           .map(res => res.json());
   }
 

@@ -11,6 +11,6 @@ export class RankService extends BaseCardService {
     }
 
     rankIssue(id: string, direction: string, referenceId: string): void {
-        this._put(`api/rank/issue/${id}/${direction}/${referenceId}`);
+        this._put(`api/rank/issue/${id}/${direction}/${referenceId}`).subscribe();
     }
 }
