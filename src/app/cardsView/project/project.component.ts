@@ -4,6 +4,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ProjectService} from "../services/project/project.service";
+import {RankService} from "../services/rank/rank.service";
 import {ParentCard} from "../../card/card";
 import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.component";
 
@@ -16,8 +17,8 @@ import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.co
 export class ProjectComponent extends BaseScrollableCardsViewComponent {
   private key: number;
 
-  constructor(private route: ActivatedRoute, private service: ProjectService) {
-    super();
+  constructor(private route: ActivatedRoute, private service: ProjectService, rankService: RankService) {
+    super(rankService);
   }
 
   loadNextBatch() {

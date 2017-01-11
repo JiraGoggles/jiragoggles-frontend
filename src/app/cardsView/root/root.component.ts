@@ -3,6 +3,7 @@
  */
 import {Component} from '@angular/core';
 import {RootService} from "../services/root/root.service";
+import {RankService} from "../services/rank/rank.service";
 import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.component";
 
 
@@ -12,8 +13,8 @@ import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.co
   styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
 export class RootComponent extends BaseScrollableCardsViewComponent {
-  constructor(private rootService: RootService) {
-    super();
+  constructor(private rootService: RootService, rankService: RankService) {
+    super(rankService);
   }
 
   loadNextBatch() {

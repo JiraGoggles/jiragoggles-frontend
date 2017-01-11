@@ -1,8 +1,10 @@
 <div class="card panel panel-primary">
   <div class="panel-heading" >
     <div class="panel-title" >
+      <span *ngIf="model.type.toLowerCase() != 'project' && model.key != 'OTHERS'" class="rankButton glyphicon glyphicon-chevron-left" (click)="onRankClick(model.key, 'left')"></span>
       <a *ngIf="model.type.toLowerCase() != 'sub-task'" [routerLink]="parentPath" class="navbar-link">{{model.key}}</a>
       <a *ngIf="model.type.toLowerCase() == 'sub-task'" class="disabled navbar-link">{{model.key}}</a>
+      <span *ngIf="model.type.toLowerCase() != 'project' && model.key != 'OTHERS'" class="rankButton glyphicon glyphicon-chevron-right" (click)="onRankClick(model.key, 'right')"></span>
       <div *ngIf="model.key.toLowerCase() != 'others'" class="pull-right">
           <a href="{{jiraUrl}}" target="_parent" class="link">
             <span class="glyphicon glyphicon-share-alt glyphicon-small" aria-hidden="true"></span>

@@ -1,36 +1,8 @@
-body {
+html, body{
   height: 100%;
   font-family: Arial, Helvetica, sans-serif
 }
 
-.main-content {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.page-header {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #2e6da4;
-}
-
-.footer-content {
-  color: white;
-  text-align: center;
-  font-size: small;
-  height: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  > a {
-    color: white;
-    font-weight: bold;
-  }
+span.active {
+  background-color: gray;
 }

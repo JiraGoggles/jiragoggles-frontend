@@ -1,10 +1,10 @@
 <div class="base-cards-view">
-  <perfect-scrollbar (ps-x-reach-end)="scrolledToEnd($event)" [config]="containerScrollbarConfig" class="container-scrollable">
+  <perfect-scrollbar id="perfect-scrollbar" (ps-x-reach-end)="scrolledToEnd($event)" [config]="containerScrollbarConfig" class="container-scrollable">
 
-    <perfect-scrollbar [config]="columnScrollbarConfig" class="card-column" *ngFor="let card of cards">
-      <parent-card [model]="card" [type]="card.type | lowercase"></parent-card>
-      <div *ngIf="card.subCards">
-        <div *ngFor="let subCard of card.subCards">
+    <perfect-scrollbar id="{{card.key}}" [config]="columnScrollbarConfig" class="card-column" *ngFor="let card of cards">
+      <parent-card [model]="card" [type]="card.type | lowercase" (onRankChangeRequest)="onRankChangeRequest($event)"></parent-card>
+      <div *ngIf="card.subCards" dnd-sortable-container [sortableData]="card.subCards" [dropZones]="[card.key]">
+        <div id="{{subCard.key}}-subCard" *ngFor="let subCard of card.subCards; let i = index" dnd-sortable [sortableIndex]="i" [dragData]="subCard.key" (onDropSuccess)="dropSuccess($event)">
           <child-card [model]="subCard" [parentModel]="card" [type]="subCard.type"></child-card>
         </div>
       </div>

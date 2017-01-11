@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ParentCard} from "../../card/card";
 import {StoryService} from "../services/story/story.service";
+import {RankService} from "../services/rank/rank.service";
 import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.component";
 
 
@@ -14,8 +15,8 @@ import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.co
   styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
 export class StoryComponent extends BaseScrollableCardsViewComponent {
-  constructor(private route: ActivatedRoute, private service: StoryService) {
-    super();
+  constructor(private route: ActivatedRoute, private service: StoryService, rankService: RankService) {
+    super(rankService);
   }
 
   loadNextBatch() {

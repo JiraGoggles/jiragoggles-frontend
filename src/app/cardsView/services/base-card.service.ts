@@ -20,10 +20,14 @@ export abstract class BaseCardService {
      .map(res => res.json());
   }
 
+  protected _put<T>(path: string): Observable<T> {
+      return this.http.put(path, "")
+          .map(res => res.json());
+  }
+
   protected _getPage<T extends Card>(path: string, page: number, size: number): Observable<PaginateResponse<T>> {
     return this._get(path, this.paginationParams(page, size));
   }
-
 
   private paginationParams(page: number, size: number): URLSearchParams {
     let params = new URLSearchParams();

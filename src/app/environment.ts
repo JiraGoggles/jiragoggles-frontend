@@ -11,6 +11,8 @@ import {RootService} from "./cardsView/services/root/root.service";
 import {RootMockService} from "./cardsView/services/root/root-mock.service";
 import {EpicMockService} from "./cardsView/services/epic/epic-mock.service";
 import {StoryMockService} from "./cardsView/services/story/story-mock.service";
+import {RankService} from "./cardsView/services/rank/rank.service";
+import {RankMockService} from "./cardsView/services/rank/rank-mock.service";
 
 // Environment Providers
 let PROVIDERS: any[] = [
@@ -28,6 +30,7 @@ if ('production' === ENV) {
 
   PROVIDERS = [
     ...PROVIDERS,
+    RankService,
     RootService,
     ProjectService,
     EpicService,
@@ -52,6 +55,7 @@ if ('production' === ENV) {
   PROVIDERS = [
     ...PROVIDERS,
     {provide: RootService, useClass: RootMockService},
+    {provide: RankService, useClass: RankMockService},
     {provide: ProjectService, useClass: ProjectMockService},
     {provide: EpicService, useClass: EpicMockService},
     {provide: StoryService, useClass: StoryMockService}

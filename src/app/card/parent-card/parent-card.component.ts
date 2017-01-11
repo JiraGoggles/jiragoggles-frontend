@@ -1,7 +1,7 @@
 /**
  * Created by wiekonek on 11.12.16.
  */
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 import {ParentCard} from "../card";
 import {ChildCardComponent} from "../child-card/child-card.component";
 
@@ -21,10 +21,17 @@ enum StatusType {
 export class ParentCardComponent extends ChildCardComponent implements OnInit {
   @Input() model: ParentCard;
   @Input() type: string;
+  @Output() onRankChangeRequest = new EventEmitter<string[]>();
   private parentPath: string;
+  private path: string;
   private statusType = StatusType;
   private status: StatusType;
   private isOfProjectType: boolean; // for convenience sake (in templateUrl file)
+
+  public onRankClick(id: string, direction: string){
+    let args: string[] = [id, direction];
+    this.onRankChangeRequest.emit(args);
+  }
 
   ngOnInit(): void {
     super.init();

@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ParentCard} from "../../card/card";
 import {EpicService} from "../services/epic/epic.service";
+import {RankService} from "../services/rank/rank.service";
 import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.component";
 
 
@@ -16,8 +17,8 @@ import {BaseScrollableCardsViewComponent} from "../base-scrollable-cards-view.co
 export class EpicComponent extends BaseScrollableCardsViewComponent {
   private key: number;
 
-  constructor(private route: ActivatedRoute, private service: EpicService) {
-    super();
+  constructor(private route: ActivatedRoute, private service: EpicService, rankService: RankService) {
+    super(rankService);
   }
 
   loadNextBatch() {

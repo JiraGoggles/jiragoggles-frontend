@@ -32,6 +32,9 @@ import {BreadcrumbItemComponent} from "./breadcrumb/breadcrumb-item/breadcrumb-i
 import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
 import {TooltipModule} from "ng2-bootstrap";
+import {DndModule} from "ng2-dnd";
+
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -71,6 +74,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
+    DndModule.forRoot(),
     Ng2PaginationModule,
     HttpModule,
     TooltipModule,
