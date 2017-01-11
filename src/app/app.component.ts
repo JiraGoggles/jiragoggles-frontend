@@ -13,7 +13,7 @@ import {SessionService} from "./session.service";
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.css'
+    'app.component.scss'
   ],
   template: `
     <main class="col-md-12 center-block">

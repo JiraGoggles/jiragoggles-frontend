@@ -4,14 +4,14 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ProjectService} from "../services/project/project.service";
-import {BasePaginateCardComponent} from "../base-paginate-card.component";
+import {BasePaginateCardComponent} from "../base-scrollable-cards-view.component";
 import {RankService} from "../services/rank/rank.service";
 
 
 @Component({
   selector: 'project',
-  templateUrl: '../base-view.component.html',
-  styleUrls: [ '../base-view.component.css' ]
+  templateUrl: '../base-scrollable-cards-view.component.html',
+  styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
 export class ProjectComponent extends BasePaginateCardComponent {
   private key: number;

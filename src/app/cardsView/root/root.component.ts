@@ -3,14 +3,14 @@
  */
 import {Component} from '@angular/core';
 import {RootService} from "../services/root/root.service";
-import {BasePaginateCardComponent} from "../base-paginate-card.component";
+import {BasePaginateCardComponent} from "../base-scrollable-cards-view.component";
 import {RankService} from "../services/rank/rank.service";
 
 
 @Component({
   selector: 'test',
-  templateUrl: '../base-view.component.html',
-  styleUrls: [ '../base-view.component.css' ]
+  templateUrl: '../base-scrollable-cards-view.component.html',
+  styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
 export class RootComponent extends BasePaginateCardComponent {
   constructor(private rootService: RootService, rankService: RankService) {

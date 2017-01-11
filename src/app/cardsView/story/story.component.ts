@@ -4,14 +4,14 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {StoryService} from "../services/story/story.service";
-import {BasePaginateCardComponent} from "../base-paginate-card.component";
+import {BasePaginateCardComponent} from "../base-scrollable-cards-view.component";
 import {RankService} from "../services/rank/rank.service";
 
 
 @Component({
   selector: 'epic',
-  templateUrl: '../base-view.component.html',
-  styleUrls: [ '../base-view.component.css' ]
+  templateUrl: '../base-scrollable-cards-view.component.html',
+  styleUrls: [ '../base-scrollable-cards-view.component.scss' ]
 })
 export class StoryComponent extends BasePaginateCardComponent {
   constructor(private route: ActivatedRoute, private service: StoryService, rankService: RankService) {
