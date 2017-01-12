@@ -21,7 +21,7 @@ export abstract class BaseCardService {
   }
 
   protected _put<T>(path: string): Observable<T> {
-      return this.http.put(path, "")
+      return this.http.put(path, "", this.pluginAuth.RequestOptionsWithPluginAuthentication)
           .map(res => res.json());
   }
 
