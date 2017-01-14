@@ -20,7 +20,7 @@ export abstract class BaseScrollableCardsViewComponent {
 
   shouldHandleCustomResizeEvent: boolean = false;
   containerScrollbarConfig = { suppressScrollY: true };
-  columnScrollbarConfig = { suppressScrollX: true };
+  columnScrollbarConfig = { suppressScrollX: true, suppressScrollY: false };
 
     constructor(private rankService: RankService) {
     }
@@ -46,60 +46,59 @@ export abstract class BaseScrollableCardsViewComponent {
 
       // force an update of the horizontal scrollbar
       // otherwise it gets stuck at its end position after loading a batch
-      const container = document.getElementsByClassName('container-scrollable')[0];
+      const container = document.getElementsByClassName('main-container')[0];
       container.scrollLeft -= 10;
 
-      // react to possible changes of the container size that may happen after the batch has been loaded
-      setTimeout(() => this.updateContainerHeight(), 0);
+      setTimeout(() => { this.updateWindowHeight(); this.updateSubContainerWidth(); }, 0);
     });
   }
 
-    dropSuccess($event) {
-        let dropped = document.getElementById($event+"-subCard");
-        let prevNeighbor = dropped.previousElementSibling;
-        let nextNeighbor = dropped.nextElementSibling;
+  dropSuccess($event) {
+      let dropped = document.getElementById($event+"-subCard");
+      let prevNeighbor = dropped.previousElementSibling;
+      let nextNeighbor = dropped.nextElementSibling;
 
-        if (prevNeighbor !== null) {
-            this.rankService.rankIssue(dropped.id.slice(0, -8), "After", prevNeighbor.id.slice(0, -8));
-        }
-        else if (nextNeighbor !== null) {
-            this.rankService.rankIssue(dropped.id.slice(0, -8), "Before", nextNeighbor.id.slice(0, -8));
-        }
-    }
+      if (prevNeighbor !== null) {
+          this.rankService.rankIssue(dropped.id.slice(0, -8), "After", prevNeighbor.id.slice(0, -8));
+      }
+      else if (nextNeighbor !== null) {
+          this.rankService.rankIssue(dropped.id.slice(0, -8), "Before", nextNeighbor.id.slice(0, -8));
+      }
+  }
 
-    onRankChangeRequest(args: string[]) {
-        let callerId: string = args[0];
-        let direction: string = args[1];
-        let caller = document.getElementById(callerId);
-        let parent = document.getElementById('perfect-scrollbar').children[0];
+  onRankChangeRequest(args: string[]) {
+      let callerId: string = args[0];
+      let direction: string = args[1];
+      let caller = document.getElementById(callerId);
+      let parent = document.getElementById('perfect-scrollbar').children[0];
 
-        if (direction == 'left') {
-            this.rankUp(caller, parent);
-        } else if (direction == 'right') {  //there might be other directions added like max-left and max-right
-            this.rankDown(caller, parent);
-        }
-    }
+      if (direction == 'left') {
+          this.rankUp(caller, parent);
+      } else if (direction == 'right') {  //there might be other directions added like max-left and max-right
+          this.rankDown(caller, parent);
+      }
+  }
 
-    private rankUp(caller: Element, parent: Element) {
-        let neighbor = caller.previousElementSibling;
-        if (neighbor !== null) {
-            if (neighbor.id === "OTHERS")
-                return;
-            this.rankService.rankIssue(caller.id, "Before", neighbor.id);
-            parent.insertBefore(caller, neighbor);
+  private rankUp(caller: Element, parent: Element) {
+      let neighbor = caller.previousElementSibling;
+      if (neighbor !== null) {
+          if (neighbor.id === "OTHERS")
+              return;
+          this.rankService.rankIssue(caller.id, "Before", neighbor.id);
+          parent.insertBefore(caller, neighbor);
 
-        }
-    }
+      }
+  }
 
-    private rankDown(caller: Element, parent: Element) {
-        let neighbor = caller.nextElementSibling;
-        if (neighbor !== null) {
-            if (neighbor.id === "OTHERS")
-                return;
-            this.rankService.rankIssue(caller.id, "After", neighbor.id);
-            parent.insertBefore(neighbor, caller);
-        }
-    }
+  private rankDown(caller: Element, parent: Element) {
+      let neighbor = caller.nextElementSibling;
+      if (neighbor !== null) {
+          if (neighbor.id === "OTHERS")
+              return;
+          this.rankService.rankIssue(caller.id, "After", neighbor.id);
+          parent.insertBefore(neighbor, caller);
+      }
+  }
 
   protected scrolledToEnd(event: any): void {
     // TODO couldn't find any better way to determine whether the event comes from the horizontal scrollbar
@@ -115,7 +114,7 @@ export abstract class BaseScrollableCardsViewComponent {
     }
   }
 
-  private updateContainerHeight() {
+  private updateWindowHeight() {
     // if the addon is not being loaded within the iframe then the 'AP' object is not available
     try {
       AP.sizeToParent(true);
@@ -124,6 +123,14 @@ export abstract class BaseScrollableCardsViewComponent {
 
     this.shouldHandleCustomResizeEvent = true;
     $(window).trigger('resize', 'custom');
+  }
+
+  private updateSubContainerWidth() {
+    const actualWidth = $('.card-row').width() * this.cards.length;
+    const parentWidth = $('.main-container').width();
+    const finalWidth = Math.max(actualWidth, parentWidth);
+
+    $('.sub-container').width(finalWidth);
   }
 
   private registerWindowResizeEventHandler() {
@@ -140,11 +147,15 @@ export abstract class BaseScrollableCardsViewComponent {
 
         const footerHeight = $('.footer').height();
 
-        let maxHeightLeft = $(window).height() - headerTotalHeight - footerHeight - 20;
+        let mainContainerHeight = $(window).height() - headerTotalHeight - footerHeight - 20;
 
-        if (maxHeightLeft >= 350) { // if maxHeightLeft isn't even 350 px then it's going to look bad anyway
-          $('.base-cards-view').height(maxHeightLeft);
-          $('.card-column').height(maxHeightLeft);
+        if (mainContainerHeight >= 350) { // if mainContainerHeight isn't even 350 px then we don't make any adjustments
+          $('.main-container').height(mainContainerHeight);
+
+          const cardRowTopSpace = parseInt($('.card-row').css('padding-top'), 10);
+          const cardRowBottomSpace = parseInt($('.card-row').css('padding-bottom'), 10);
+          const cardRowTotalHeight = $('.card-row').height() + cardRowTopSpace + cardRowBottomSpace;
+          $('.sub-container').height(mainContainerHeight - cardRowTotalHeight);
         }
 
         this.shouldHandleCustomResizeEvent = false;

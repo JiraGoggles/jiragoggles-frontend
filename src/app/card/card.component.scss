@@ -18,7 +18,8 @@ a.link:hover {
 
 .card {
   width: $cardWidth;
-  margin: 0 auto 15px auto;
+  margin: 0 auto;
+  white-space: normal;
 
   .panel-title > .navbar-link {
     font-weight: bold;

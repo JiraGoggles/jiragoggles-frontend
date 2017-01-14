@@ -15,7 +15,7 @@ enum StatusType {
 @Component({
   selector: 'parent-card',
   templateUrl: './parent-card.component.html',
-  styleUrls: [ '../card.component.scss' ]
+  styleUrls: [ '../card.component.scss', './parent-card.component.scss' ]
 })
 
 export class ParentCardComponent extends ChildCardComponent implements OnInit {
