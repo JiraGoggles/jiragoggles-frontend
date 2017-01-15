@@ -26,7 +26,8 @@
           "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
           "typeImgUrl": "https://testjiragoggles.atlassian.net/images/icons/issuetypes/story.svg",
           "avatarUrls": null,
-          "subCards": null
+          "subCards": null,
+          "status": "TO DO"
         },
         {
           "id": "10002",
@@ -37,7 +38,8 @@
           "description": "Livestream from cameras",
           "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
           "avatarUrls": null,
-          "subCards": null
+          "subCards": null,
+          "status": "TO DO"
         },
         {
           "id": "10003",
@@ -48,7 +50,8 @@
           "description": "Best epic ever.",
           "priorityImgUrl": "https://marketplace-cdn.atlassian.com/files/images/93f890ce-1410-4946-9664-13148659084e.png",
           "avatarUrls": null,
-          "subCards": null
+          "subCards": null,
+          "status": "Other status"
         },
         {
           "id": "10004",
