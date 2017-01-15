@@ -14,7 +14,17 @@
       <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.priority}}"/>
     </div>
     <div class="others-text">
-      <read-more [maxLength]="50" [text]="model.name"></read-more>
+      <div class="others-text" tooltipPopupDelay='500' tooltip="{{model.name}}" container="body" placement="bottom">{{shortName()}}</div>
+      <div *ngIf="model.status">
+          <span
+            [ngClass]="{
+              'label-primary': status == statusType.TO_DO,
+              'label-warning': status == statusType.IN_PROGRESS,
+              'label-success': status == statusType.DONE,
+              'label-default': status == statusType.OTHER
+            }"
+            class="label">{{model.status | uppercase}}</span>
+      </div>
     </div>
   </div>
 </div>

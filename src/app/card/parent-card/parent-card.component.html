@@ -1,4 +1,4 @@
-<div class="card panel panel-primary">
+<div class="card parent-card panel panel-primary">
   <div class="panel-heading" >
     <div class="panel-title" >
       <span *ngIf="model.type.toLowerCase() != 'project' && model.key != 'OTHERS'" class="rankButton glyphicon glyphicon-chevron-left" (click)="onRankClick(model.key, 'left')"></span>
@@ -21,7 +21,7 @@
       <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.priority}}"/>
     </div>
     <div [ngClass]="{'project-text': isOfProjectType, 'others-text': !isOfProjectType}" >
-      <read-more [maxLength]="50" [text]="model.name"></read-more>
+      <div class="others-text" tooltipPopupDelay='500' tooltip="{{model.name}}" container="body" placement="bottom">{{shortName()}}</div>
       <div>
         <span
           [ngClass]="{
