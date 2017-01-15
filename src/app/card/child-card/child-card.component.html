@@ -13,8 +13,6 @@
       <img *ngIf="model.typeImgUrl" src="{{model.typeImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.type}}"/>
       <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.priority}}"/>
     </div>
-    <div class="others-text">
-      <read-more [maxLength]="50" [text]="model.name"></read-more>
-    </div>
+    <div class="others-text">{{model.name}}</div>
   </div>
 </div>

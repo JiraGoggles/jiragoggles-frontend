@@ -15,7 +15,7 @@ enum StatusType {
 @Component({
   selector: 'parent-card',
   templateUrl: './parent-card.component.html',
-  styleUrls: [ '../card.component.scss' ]
+  styleUrls: [ '../card.component.scss', './parent-card.component.scss' ]
 })
 
 export class ParentCardComponent extends ChildCardComponent implements OnInit {
@@ -60,5 +60,11 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
         this.status = StatusType.OTHER;
       }
     }
+
+    // TODO get rid of this workaround eventually
+    const lengthBeforeTruncation = this.model.name.length;
+    this.model.name = this.model.name.substring(0, 40);
+    if (lengthBeforeTruncation > 40)
+      this.model.name += '...';
   }
 }
