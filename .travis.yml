@@ -34,8 +34,12 @@ deploy:
   provider: heroku
   api_key:
     secure: fugBOZFpvQcikMvlkpxpOn0Os/xlPJytI9b2atzBU0o5OJnM5cRhiwZ+OAwHy42PxZQhYCTyeN5u1vkhLReqtHkhYa9GRWCAu4FxnuzZj6EF8/xbar13CwqBpK2MQ7dgWxx7GkaocThiDHCs4OJel0tu0utt0F6tRxeGJRyslCVXtih/3BXRVEKyg0i4a3+sWoMzH0DqgUqaC+OxcL1uzUO/9UemlPFiMi2gUEQP4ALvRkNoYFqlVRpFswuAkJaKhKd40wwrAn2E7Tlc0q7sYoHBQ4YGlLHCfJC1diQfrvcxO3kcLisM/lxPy1KPvNSrPzqbvAQiCsmO+CEYqVLYEoVumKHx8gkMYbASHsMW0SFLhM46xL/g0hLyF/4LcobggmVmKfe9+ydca1cOJuPwClFXKOQQoHwyKeQm7PczqiL+AQcXuOeG1tIpT6lYZ+9YYRDLXhGvxYjXBXfz9phb4d2gt9nrRUWKwxI/s/8v5Si+JWxgNxznMwNUoHBb3I8DxCDcWT5oj611gLzxFRJpiQ6sUuhOV51HTtdvT82F8GJsil2Pe3N+NhKoV8gR8iGHDbIwzTEAWusBXoloa6ZXxyut+QW9wOh14xb5rDa2kVxdfK44yhlTwhFW6UzQV/WQXgmo3nw6bfdD39ykHU7sH6SQ1gOuImTiImLu2Qb4NyU=
-  app: testjiragoggles-frontend
+  app:
+    develop: testjiragoggles-frontend
+    master: jiragoggles-client
   on:
     repo: JiraGoggles/jiragoggles-frontend
-    branch: develop
+    branch:
+      - develop
+      - master
   buildpack: https://github.com/heroku/heroku-buildpack-nodejs#yarn
