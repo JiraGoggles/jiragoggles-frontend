@@ -32,11 +32,5 @@ export class ParentCardComponent extends ChildCardComponent implements OnInit {
     else {
       this.parentPath = this.model.key;
     }
-
-    // TODO get rid of this workaround eventually
-    const lengthBeforeTruncation = this.model.name.length;
-    this.model.name = this.model.name.substring(0, 40);
-    if (lengthBeforeTruncation > 40)
-      this.model.name += '...';
   }
 }

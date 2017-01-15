@@ -17,10 +17,19 @@ export class ChildCardComponent implements  OnInit {
   @Input() parentModel: ParentCard;
   @Input() type: string;
 
+  protected maxNameLength: number = 40;
   protected statusType = StatusType;
   protected status: StatusType;
   protected jiraUrl: string = null;
   protected childPath: string;
+
+  shortName(): string {
+    let name = this.model.name;
+    if(name  != null)
+      return name.length > this.maxNameLength ? name.substring(0, this.maxNameLength) + "..." : name;
+    else
+      return '';
+  }
 
   ngOnInit(): void {
     let path = this.parentModel.key + '/' +this.model.key;
@@ -30,12 +39,6 @@ export class ChildCardComponent implements  OnInit {
       this.childPath = path;
 
     this.init();
-
-    // TODO get rid of this workaround eventually
-    const lengthBeforeTruncation = this.model.name.length;
-    this.model.name = this.model.name.substring(0, 40);
-    if (lengthBeforeTruncation > 40)
-      this.model.name += '...';
   }
 
   init(): void {

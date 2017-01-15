@@ -14,7 +14,7 @@
       <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.priority}}"/>
     </div>
     <div class="others-text">
-      <div class="others-text">{{model.name}}</div>
+      <div class="others-text" tooltipPopupDelay='500' tooltip="{{model.name}}" container="body" placement="bottom">{{shortName()}}</div>
       <div *ngIf="model.status">
           <span
             [ngClass]="{
