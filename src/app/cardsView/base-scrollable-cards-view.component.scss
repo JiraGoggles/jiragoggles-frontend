@@ -8,7 +8,7 @@ $childCardHeight: 110px;
   z-index: 1;
 }
 
-.main-container, .sub-container {
+#main-container, .sub-container {
   position: relative;
   width: 100%;
   white-space: nowrap;
@@ -16,7 +16,7 @@ $childCardHeight: 110px;
   background-color: #F0F0F0;
 }
 
-.main-container {
+#main-container {
   height: $mainContainerHeight; // initial value
   background-color: #F0F0F0;
 }

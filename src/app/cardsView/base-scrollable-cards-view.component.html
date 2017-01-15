@@ -1,5 +1,5 @@
 <div class="base-cards-view">
-  <perfect-scrollbar id="perfect-scrollbar" (ps-x-reach-end)="scrolledToEnd($event)" [config]="containerScrollbarConfig" class="main-container">
+  <perfect-scrollbar id="main-container" (ps-x-reach-end)="scrolledToEnd($event)" [config]="containerScrollbarConfig">
 
     <parent-card class="card-row" *ngFor="let card of cards" [model]="card" [type]="card.type | lowercase" (onRankChangeRequest)="onRankChangeRequest($event)"></parent-card>
 
