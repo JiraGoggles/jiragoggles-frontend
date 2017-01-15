@@ -21,7 +21,7 @@
       <img *ngIf="model.priorityImgUrl" src="{{model.priorityImgUrl}}" tooltipPopupDelay='500' tooltip="{{model.priority}}"/>
     </div>
     <div [ngClass]="{'project-text': isOfProjectType, 'others-text': !isOfProjectType}" >
-      <read-more [maxLength]="50" [text]="model.name"></read-more>
+      <div class="others-text">{{model.name}}</div>
       <div>
         <span
           [ngClass]="{
