@@ -4,7 +4,7 @@
 import {
   Component, Input, OnInit
 } from '@angular/core';
-import {ChildCard, ParentCard} from "../card";
+import {ChildCard, ParentCard, StatusType} from "../card";
 
 @Component({
   selector: 'child-card',
@@ -17,6 +17,8 @@ export class ChildCardComponent implements  OnInit {
   @Input() parentModel: ParentCard;
   @Input() type: string;
 
+  protected statusType = StatusType;
+  protected status: StatusType;
   protected jiraUrl: string = null;
   protected childPath: string;
 
@@ -37,6 +39,25 @@ export class ChildCardComponent implements  OnInit {
   }
 
   init(): void {
+    if (this.model.status != null) {
+      switch (this.model.status.toUpperCase()) {
+        case "TO DO":
+          this.status = StatusType.TO_DO;
+          break;
+        case "IN PROGRESS":
+          this.status = StatusType.IN_PROGRESS;
+          break;
+        case "DONE":
+          this.status = StatusType.DONE;
+          break;
+        default:
+          this.status = StatusType.OTHER;
+          break;
+      }
+    }
+    else {
+      this.status = StatusType.OTHER;
+    }
     //TODO Is there any other way to get the jira base url?
     if (this.model.url != null)
       this.jiraUrl = 'https://' + this.model.url.split('/')[2] + '/browse/' + this.model.key;

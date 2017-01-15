@@ -5,16 +5,20 @@ interface Dictionary<T> {
   [ index: string ]: T
 }
 
+export enum StatusType {
+  TO_DO,
+  IN_PROGRESS,
+  DONE,
+  OTHER
+}
 
 export interface ParentCard extends Card {
   subCards?: ChildCard[];
 
-  status?: string; // 'TO DO' / 'IN PROGRESS' / 'DONE'
   avatarUrls?: Dictionary<string>;
 }
 
 export interface  ChildCard extends Card {
-
 }
 
 export interface Card {
@@ -26,4 +30,6 @@ export interface Card {
   name: string;
   typeImgUrl: string;
   priorityImgUrl: string;
+
+  status?: string; // 'TO DO' / 'IN PROGRESS' / 'DONE'
 }
