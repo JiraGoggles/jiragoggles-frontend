@@ -29,7 +29,7 @@
         {
           "id": "10029",
           "key": "SH-7",
-          "name": "bug in epic",
+          "name": "Bug in epic with long name, long name, long name, long name, long name, long name.",
           "type": "Bug",
           "url": "https://testjiragoggles.atlassian.net/rest/api/2/issue/10029",
           "description": null,
