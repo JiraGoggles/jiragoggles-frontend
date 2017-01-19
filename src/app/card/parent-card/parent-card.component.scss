@@ -2,4 +2,14 @@
 
 .parent-card {
   height: $parentCardHeight;
+
+  & > .panel-heading {
+    padding: 7px 15px;
+  }
+
+  & > .panel-body {
+    padding: 5px 10px;
+  }
 }
+
+

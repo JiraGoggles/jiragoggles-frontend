@@ -31,8 +31,7 @@ a.link:hover {
 
   .panel-body {
     width: $cardWidth;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 5%;
 
     .navbar-link {
       font-weight: bold;
@@ -40,7 +39,7 @@ a.link:hover {
     }
 
     .header {
-      padding-bottom: 5%;
+      padding-bottom: 1%;
     }
 
     & > .project-img {
@@ -49,6 +48,7 @@ a.link:hover {
     }
 
     & > .others-img {
+      padding-top: 2%;
       width: 10%;
       float: left;
     }

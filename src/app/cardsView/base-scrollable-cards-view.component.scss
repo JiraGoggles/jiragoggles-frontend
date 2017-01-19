@@ -1,7 +1,7 @@
 $mainContainerHeight: 350px;
 $cardColumnWidth: 250px;
-$parentCardHeight: 140px;
-$childCardHeight: 110px;
+$parentCardHeight: 110px;
+$childCardHeight: 95px;
 
 .base-cards-view {
   position: relative;
@@ -32,7 +32,8 @@ $childCardHeight: 110px;
 
 .card-row {
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 10px;
 }
 
 .sub-container-column {

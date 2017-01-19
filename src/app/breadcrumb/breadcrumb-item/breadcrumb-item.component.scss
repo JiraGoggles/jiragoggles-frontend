@@ -12,6 +12,7 @@ a {
   float: left;
   width: $breadcrumbItemWidth;
   min-height: $breadcrumbItemHeight;
+  margin-bottom: 0px;
 
   .panel-heading {
     height: 37px;
@@ -19,6 +20,7 @@ a {
 
   .panel-body {
     min-height: $breadcrumbItemHeight - 37px;
+    padding: 5% 5%;
   }
 
   .panel-body img {
