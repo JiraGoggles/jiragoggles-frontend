@@ -9,7 +9,7 @@ const sessionKeyword: string = "-last_session";
 @Injectable()
 export class SessionService  {
 
-  public JiraInstance = "";
+  public JiraInstance: string = "";
 
   constructor(private router: Router) {
     this.JiraInstance = document.location.href.split('/')[2];
